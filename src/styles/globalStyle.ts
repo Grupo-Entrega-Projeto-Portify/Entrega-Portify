@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
 :root{
     --color-primary: #11BCC7;
+    --color-primary-70: rgba(17,188,199,0.7);
 
     --background: #FFFFFF;
     --header: #0F1411;
@@ -29,6 +30,8 @@ export const GlobalStyle = createGlobalStyle`
 
 .darkMode:root{
     --color-primary: #11BCC7;
+    --color-primary-70: rgba(17,188,199,0.7);
+
     --background: #0F1411;
     --header: #0F1411;
     --footer: #F5F5F5;
@@ -50,7 +53,12 @@ export const GlobalStyle = createGlobalStyle`
     --500: 500;
     --400: 400;
 
+    --transition: 0.5s;
+
 }
 
+button{
+    cursor: pointer;
+}
 
 `;
