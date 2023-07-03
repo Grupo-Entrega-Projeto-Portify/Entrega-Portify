@@ -26,3 +26,13 @@ export const DivHeader = styled.div`
 display: flex;
 gap: 1rem;
 `
+
+export const ButtonLogin = styled.button`
+background-color: var(--color-primary);
+border-radius: 255px;
+cursor: pointer;
+color: var(--background);
+font-size: var(--600);
+font-weight: var(--600);
+padding: 0.5rem;
+`

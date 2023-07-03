@@ -1,8 +1,12 @@
 import React from "react"
-import { HeaderCadastroPage } from "../../components/HomePageComponents/Header"
+import { HeaderHomePage } from "../../components/HomePageComponents/Header"
+import { SectionHomePage } from "../../components/HomePageComponents/Section"
 
 export const HomePage = () => {
     return (
-        <HeaderCadastroPage />
+        <>
+            <HeaderHomePage />
+            <SectionHomePage />
+        </>
     )
 }
