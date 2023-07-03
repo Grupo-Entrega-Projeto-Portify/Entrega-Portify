@@ -1,7 +1,9 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { cadasterFormSchema, TCadasterFormValues } from "./cadasterFormSchema";
-import { Input } from "../Input";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm, SubmitHandler } from "react-hook-form"
+import { cadasterFormSchema, TCadasterFormValues } from "./cadasterFormSchema"
+import { Input } from "../Input"
+import { useContext } from "react"
+import { UserContext } from "../providers/UserContext/UserContext"
 
 export const CadasterForm = () => {
 	const {
@@ -10,15 +12,15 @@ export const CadasterForm = () => {
 		formState: { errors },
 	} = useForm<TCadasterFormValues>({
 		resolver: zodResolver(cadasterFormSchema),
-	});
+	})
 
 	const submit: SubmitHandler<TCadasterFormValues> = async (data) => {
-		// userRegister(data);
-	};
+		userCadaster(data)
+	}
 
-	// const { userRegister } = useContext(UserContext);
+	const { userCadaster } = useContext(UserContext)
 
-	// const handleReturn = () => {};
+	// const handleReturn = () => {}
 
 	return (
 		<div>
@@ -64,5 +66,5 @@ export const CadasterForm = () => {
 				<button type="submit">Cadastrar</button>
 			</form>
 		</div>
-	);
-};
+	)
+}
