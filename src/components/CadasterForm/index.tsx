@@ -1,6 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { cadasterFormSchema, TCadasterFormValues } from "./cadasterFormSchema";
+import { Input } from "../Input";
 
 export const CadasterForm = () => {
 	const {
@@ -17,39 +18,48 @@ export const CadasterForm = () => {
 
 	// const { userRegister } = useContext(UserContext);
 
-
 	// const handleReturn = () => {};
 
 	return (
 		<div>
-      <button onClick={handleReturn}>Voltar</button>
+			<button onClick={}>Voltar</button>
 			<h1>CADASTRE-SE</h1>
 			<form onSubmit={handleSubmit(submit)}>
 				<div>
-					<label htmlFor="name">Nome</label>
-					<input {...register("name")} />
-					{errors.name && <span>{errors.name.message}</span>}
-				</div>
-				<div>
-					<label htmlFor="email">E-mail</label>
-					<input {...register("email")} />
-					{errors.email && <span>{errors.email.message}</span>}
-				</div>
-				<div>
-					<label htmlFor="password">Senha</label>
-					<input
-						type="password"
-						{...register("password")}
+					<Input
+						label="Nome"
+						type="text"
+						placeholder="Digite o seu nome"
+						register={register("name")}
 					/>
-					{errors.password && <span>{errors.password.message}</span>}
+					{errors.name && <p>{errors.name.message}</p>}
 				</div>
 				<div>
-					<label htmlFor="confirm">Confirmar Senha</label>
-					<input
-						type="password"
-						{...register("confirm")}
+					<Input
+						label="E-mail"
+						type="email"
+						placeholder="Digite o seu email"
+						register={register("email")}
 					/>
-					{errors.confirm && <span>{errors.confirm.message}</span>}
+					{errors.email && <p>{errors.email.message}</p>}
+				</div>
+				<div>
+					<Input
+						label="Senha"
+						type="password"
+						placeholder="Digite a sua senha"
+						register={register("password")}
+					/>
+					{errors.password && <p>{errors.password.message}</p>}
+				</div>
+				<div>
+					<Input
+						label="Confirmação de senha"
+						type="password"
+						placeholder="Digite novamente sua senha"
+						register={register("confirm")}
+					/>
+					{errors.confirm && <p>{errors.confirm.message}</p>}
 				</div>
 				<button type="submit">Cadastrar</button>
 			</form>
