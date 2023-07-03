@@ -4,6 +4,7 @@ import { registerFormSchema, TRegisterFormValues } from "./registerFormSchema"
 import { Input } from "../Input"
 import { useContext } from "react"
 import { UserContext } from "../providers/UserContext/UserContext"
+import { Link } from "react-router-dom"
 
 export const RegisterForm = () => {
 	const {
@@ -14,17 +15,16 @@ export const RegisterForm = () => {
 		resolver: zodResolver(registerFormSchema),
 	})
 
-	const submit: SubmitHandler<TRegisterFormValues> = async (data) => {
-		userRegister(data)
+	const submit: SubmitHandler<TRegisterFormValues> = async (formData) => {
+		userRegister(formData)
 	}
 
 	const { userRegister } = useContext(UserContext)
 
-	// const handleReturn = () => {}
 
 	return (
 		<div>
-			<button onClick={}>Voltar</button>
+			<Link to="/loginpage">Voltar</Link>
 			<h1>CADASTRE-SE</h1>
 			<form onSubmit={handleSubmit(submit)}>
 				<div>

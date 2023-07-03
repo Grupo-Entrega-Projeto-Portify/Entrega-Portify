@@ -7,17 +7,20 @@ import {
 } from "./types"
 import { api } from "../../../services/api"
 import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
+import { useNavigate } from "react-router-dom"
 
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
 	const [user, setUser] = useState<IUser | null>(null)
+    const navigate = useNavigate()
 
 	const userRegister = async (formData: TRegisterFormValues) => {
 		try {
 			const { data } = await api.post("/users", formData)
 			console.log(data)
 			console.log("Cadastro efetuado com sucesso!")
+            navigate("/loginpage")
 		} catch (error) {
 			console.log(error)
 		}
