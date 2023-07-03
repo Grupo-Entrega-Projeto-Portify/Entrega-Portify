@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const cadasterFormSchema = z
+export const registerFormSchema = z
 	.object({
 		name: z.string().nonempty({ message: "Nome é obrigatório" }),
 		email: z
@@ -30,4 +30,4 @@ export const cadasterFormSchema = z
 		path: ["confirm"],
 	});
 
-export type TCadasterFormValues = z.infer<typeof cadasterFormSchema>
+export type TRegisterFormValues = z.infer<typeof registerFormSchema>

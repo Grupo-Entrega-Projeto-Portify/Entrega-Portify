@@ -1,24 +1,24 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, SubmitHandler } from "react-hook-form"
-import { cadasterFormSchema, TCadasterFormValues } from "./cadasterFormSchema"
+import { registerFormSchema, TRegisterFormValues } from "./registerFormSchema"
 import { Input } from "../Input"
 import { useContext } from "react"
 import { UserContext } from "../providers/UserContext/UserContext"
 
-export const CadasterForm = () => {
+export const RegisterForm = () => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<TCadasterFormValues>({
-		resolver: zodResolver(cadasterFormSchema),
+	} = useForm<TRegisterFormValues>({
+		resolver: zodResolver(registerFormSchema),
 	})
 
-	const submit: SubmitHandler<TCadasterFormValues> = async (data) => {
-		userCadaster(data)
+	const submit: SubmitHandler<TRegisterFormValues> = async (data) => {
+		userRegister(data)
 	}
 
-	const { userCadaster } = useContext(UserContext)
+	const { userRegister } = useContext(UserContext)
 
 	// const handleReturn = () => {}
 

@@ -6,14 +6,14 @@ import {
 	IUserProviderProps,
 } from "./types"
 import { api } from "../../../services/api"
-import { TCadasterFormValues } from "../../CadasterForm/cadasterFormSchema"
+import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
 
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
 	const [user, setUser] = useState<IUser | null>(null)
 
-	const userCadaster = async (formData: TCadasterFormValues) => {
+	const userRegister = async (formData: TRegisterFormValues) => {
 		try {
 			const { data } = await api.post("/users", formData)
 			console.log(data)
@@ -44,7 +44,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 	}
 
 	return (
-		<UserContext.Provider value={{ user, userCadaster, userLogin, userLogout }}>
+		<UserContext.Provider value={{ user, userRegister, userLogin, userLogout }}>
 			{children}
 		</UserContext.Provider>
 	)

@@ -1,4 +1,4 @@
-import { TCadasterFormValues } from "../../CadasterForm/cadasterFormSchema"
+import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
 
 export interface IUserProviderProps {
 	children: React.ReactNode
@@ -17,7 +17,7 @@ export interface IUserLoginResponse {
 
 export interface IUserContext {
 	user: IUser | null
-	userCadaster: (formData: TCadasterFormValues) => void
+	userRegister: (formData: TRegisterFormValues) => void
 	userLogin: (formData: any) => void
 	userLogout: () => void
 }
