@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-export const CadastroPage = () => {
+export const RegisterPage = () => {
     return (
         <div>
             <h1>1</h1>
