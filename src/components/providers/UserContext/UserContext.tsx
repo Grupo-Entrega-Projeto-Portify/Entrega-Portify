@@ -3,17 +3,17 @@ import {
 	IUser,
 	IUserContext,
 	IUserLoginResponse,
-	TCadasterForm,
 	IUserProviderProps,
 } from "./types"
 import { api } from "../../../services/api"
+import { TCadasterFormValues } from "../../CadasterForm/cadasterFormSchema"
 
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({ children }: IUserProviderProps) => {
 	const [user, setUser] = useState<IUser | null>(null)
 
-	const userCadaster = async (formData: TCadasterForm) => {
+	const userCadaster = async (formData: TCadasterFormValues) => {
 		try {
 			const { data } = await api.post("/users", formData)
 			console.log(data)

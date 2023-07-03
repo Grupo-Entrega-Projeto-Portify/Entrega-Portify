@@ -1,3 +1,5 @@
+import { TCadasterFormValues } from "../../CadasterForm/cadasterFormSchema"
+
 export interface IUserProviderProps {
 	children: React.ReactNode
 }
@@ -15,13 +17,7 @@ export interface IUserLoginResponse {
 
 export interface IUserContext {
 	user: IUser | null
-	userCadaster: (formData: TCadasterForm) => void
+	userCadaster: (formData: TCadasterFormValues) => void
 	userLogin: (formData: any) => void
 	userLogout: () => void
-}
-
-export type TCadasterForm = {
-	name: string
-	email: string
-	password: string
 }
