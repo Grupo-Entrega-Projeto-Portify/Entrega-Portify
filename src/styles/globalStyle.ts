@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     --grey-0: #F5F5F5;
 
     --title: 64px;
-    --title-2: 44px;
+    --title-mobile: 44px;
 
     --title-1: 18px;
     --title-2: 16px;
@@ -55,6 +55,10 @@ export const GlobalStyle = createGlobalStyle`
 
     --transition: 0.5s;
 
+}
+
+html{
+    overflow-x: hidden;
 }
 
 button{
