@@ -11,14 +11,9 @@ export interface IUser {
 	email: string
 }
 
-export interface IUserLoginResponse {
-	accessToken: string
-	user: IUser
-}
-
 export interface IUserContext {
 	user: IUser | null
-	userRegister: (formData: TRegisterFormValues) => void
-	userLogin: (formData: TLoginFormValues) => void
+	userRegister: (formData: TRegisterFormValues) => Promise<void>
+	userLogin: (formData: TLoginFormValues) => Promise<void>
 	userLogout: () => void
 }

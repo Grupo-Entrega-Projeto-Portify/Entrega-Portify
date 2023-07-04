@@ -3,14 +3,17 @@ import { RoutesMain } from "../src/Router/RouterMain"
 import { GlobalStyle } from "./styles/globalStyle"
 import { ResetCSS } from "./styles/reset"
 import { UserProvider } from "./providers/UserContext/UserContext"
+import { PortifolioProvider } from "./providers/PortifolioContext/PortifolioContext"
 
 function App() {
   return (
       <Router>
         <UserProvider>
-          <GlobalStyle />
-          <ResetCSS />
-          <RoutesMain />
+          <PortifolioProvider >
+            <GlobalStyle />
+            <ResetCSS />
+            <RoutesMain />
+          </PortifolioProvider>
         </UserProvider>
       </Router>
   )
