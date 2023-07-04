@@ -11,7 +11,7 @@ export const SectionHomePage = () => {
                     <TextInfo>Crie seu portfólio online</TextInfo>
                     <p>Crie um portifólio para você em minutos</p>
                     <DivButtons>
-                        <ButtonRegister to="/Cadastro">cadastre-se</ButtonRegister>
+                        <ButtonRegister to="/registerpage">cadastre-se</ButtonRegister>
                         <p>ou</p>
                         <ButtonLogin to="/loginpage">acesse seu portfolio</ButtonLogin>
                     </DivButtons>

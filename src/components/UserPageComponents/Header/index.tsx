@@ -1,6 +1,5 @@
 
 import { HeaderUserPageCSS } from "./styled"
-import { Link } from "react-router-dom"
 import logo from "../../../assets/Logo.png"
 
 export const HeaderUserPage = () => {
@@ -11,7 +10,7 @@ export const HeaderUserPage = () => {
                     <div className="header__div">
                         <img src={logo} alt="logo da Portify" />
                         <div className="header__divButton">
-                            <p>usuario</p>
+                            <p className="header__userName">usuario</p>
                             <button className="header__button">Sair</button>
                         </div>
                     </div>

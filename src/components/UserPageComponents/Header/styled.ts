@@ -29,11 +29,18 @@ export const HeaderUserPageCSS = styled.header`
     gap: 20px;
   }
 
+  .header__userName{
+    color: var(--background);
+  }
 
-
-.header__button {
-  
-}
+  .header__button {
+  border-radius: 255px;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  transition: 600ms;
+  }
 
   .header__button:hover {
     background-color: var(--color-primary-70);
