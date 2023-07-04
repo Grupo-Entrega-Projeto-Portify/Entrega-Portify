@@ -1,15 +1,15 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { registerFormSchema, TRegisterFormValues } from "./registerFormSchema";
-import { Input } from "../Input";
-import { useContext } from "react";
-import { UserContext } from "../providers/UserContext/UserContext";
-import { Link } from "react-router-dom";
-import { MainRegisterCSS } from "../RegisterPageComponents/main/main";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm, SubmitHandler } from "react-hook-form"
+import { registerFormSchema, TRegisterFormValues } from "./registerFormSchema"
+import { Input } from "../Input"
+import { useContext } from "react"
+import { UserContext } from "../providers/UserContext/UserContext"
+import { Link } from "react-router-dom"
+import { MainRegisterCSS } from "../RegisterPageComponents/main/main"
+import { AiOutlineArrowLeft } from "react-icons/ai"
 
 export const RegisterForm = () => {
-  const { userRegister } = useContext(UserContext);
+  const { userRegister } = useContext(UserContext)
 
   const {
     register,
@@ -85,5 +85,5 @@ export const RegisterForm = () => {
         </div>
       </section>
     </MainRegisterCSS>
-  );
-};
+  )
+}
