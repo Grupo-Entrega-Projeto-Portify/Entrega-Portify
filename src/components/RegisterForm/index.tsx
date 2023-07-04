@@ -7,6 +7,8 @@ import { UserContext } from "../providers/UserContext/UserContext"
 import { Link } from "react-router-dom"
 
 export const RegisterForm = () => {
+	const { userRegister } = useContext(UserContext)
+
 	const {
 		register,
 		handleSubmit,
@@ -15,11 +17,9 @@ export const RegisterForm = () => {
 		resolver: zodResolver(registerFormSchema),
 	})
 
-	const submit: SubmitHandler<TRegisterFormValues> = async (formData) => {
+	const submit: SubmitHandler<TRegisterFormValues> = (formData) => {
 		userRegister(formData)
 	}
-
-	const { userRegister } = useContext(UserContext)
 
 
 	return (
