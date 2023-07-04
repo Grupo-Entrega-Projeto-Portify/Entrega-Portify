@@ -35,7 +35,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 			const { data } = await api.post("/login", formData)
 			setUser(data.user)
 			localStorage.setItem("@TOKEN", data.accessToken)
-			localStorage.setItem("@USERID", JSON.stringify(data.user.id))
+			localStorage.setItem("@USER", JSON.stringify(data.user))
 			toast.success("Login realizado com sucesso!")
             navigate("/userPage")
 		} catch (error) {
