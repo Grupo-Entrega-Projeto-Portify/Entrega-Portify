@@ -2,7 +2,6 @@ import { createContext, useState } from "react"
 import {
 	IUser,
 	IUserContext,
-	IUserLoginResponse,
 	IUserProviderProps,
 } from "./types"
 import { api } from "../../services/api"
