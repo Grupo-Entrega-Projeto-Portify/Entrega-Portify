@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "../Input"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
-import { UserContext } from "../providers/UserContext/UserContext"
+import { UserContext } from "../../providers/UserContext/UserContext"
 
 export const LoginForm = () => {
     const { register, handleSubmit, reset, formState: { errors }} = useForm<TLoginFormValues>({

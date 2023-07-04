@@ -1,5 +1,5 @@
-import { TLoginFormValues } from "../../LoginForm/loginFormSchema"
-import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
+import { TLoginFormValues } from "../../components/LoginForm/loginFormSchema"
+import { TRegisterFormValues } from "../../components/RegisterForm/registerFormSchema"
 
 export interface IUserProviderProps {
 	children: React.ReactNode
