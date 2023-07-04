@@ -21,6 +21,12 @@ export const MainLoginCSS = styled.main`
   .main__mgDiv {
   }
 
+  .text__error{
+    color: var(--Negative);
+    font-size: var(--title-4);
+    font-weight: var(--600);
+  }
+
   .main__img {
     max-width: 520px;
     max-height: 749.58px;

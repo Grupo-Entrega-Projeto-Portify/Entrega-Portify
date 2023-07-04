@@ -33,6 +33,7 @@ export const HeaderCadastroCSS = styled.header`
     font-weight: var(--700);
     color: #ffffff;
     font-size: var(--title-2);
+    text-decoration: none;
   }
 
   .header__button {

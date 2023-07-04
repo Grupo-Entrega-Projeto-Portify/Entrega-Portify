@@ -46,7 +46,7 @@ export const LoginForm = () => {
             placeholder="E-mail"
             register={register("email")}
             />
-            {errors.email ? <p>{errors.email.message}</p> : null}
+            {errors.email ? <p className="text__error">{errors.email.message}</p> : null}
             </fieldset>
             <fieldset className="main__fieldset">
 
@@ -56,7 +56,7 @@ export const LoginForm = () => {
             placeholder="Senha"
             register={register("password")}
             />
-            {errors.password ? <p>{errors.password.message}</p> : null}
+            {errors.password ? <p className="text__error">{errors.password.message}</p> : null}
             </fieldset>
 
             <button className="main__button">entrar</button>
