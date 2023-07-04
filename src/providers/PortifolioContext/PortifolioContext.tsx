@@ -1,14 +1,14 @@
-import { createContext } from "react"
-import { IPortifolioProviderProps } from "./types"
+import { createContext, useState } from "react"
+import { IPortifolioContext, IPortifolioProviderProps } from "./types"
 
-export const PorfilioContext = createContext({})
+export const PortifolioContext = createContext({} as IPortifolioContext)
 
 export const PortifolioProvider = ({ children }: IPortifolioProviderProps) => {
-
+    const [modalCreate, setModalCreate] = useState(false)
 
     return (
-        <PorfilioContext.Provider value={{}}>
+        <PortifolioContext.Provider value={{modalCreate, setModalCreate}}>
             {children}
-        </PorfilioContext.Provider>
+        </PortifolioContext.Provider>
     )
 }

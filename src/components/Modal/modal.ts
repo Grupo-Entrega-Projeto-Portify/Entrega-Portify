@@ -12,7 +12,7 @@ export const StyledModal = styled.div`
     width: 100%;
     height: 100vh;
 
-    background: rgba(0,0,0,.3);
+    background: rgba(17,188,199,0.3);
 
     .modalController {
         position: relative;
