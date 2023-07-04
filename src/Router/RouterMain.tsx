@@ -3,6 +3,7 @@ import { RegisterPage } from "../Pages/Cadastro"
 import { HomePage } from "../Pages/HomePage"
 import { LoginPage } from "../Pages/LoginPage"
 import { RegisterForm } from "../components/RegisterForm"
+import { UserPage } from "../Pages/UserPage"
 
 
 export const RoutesMain = () => {
@@ -11,6 +12,7 @@ export const RoutesMain = () => {
             <Route path="/Cadastro" element={<RegisterForm />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/loginpage" element={<LoginPage />} />
+            <Route path="/UserPage" element={<UserPage />} />
         </Routes >
     )
 }
