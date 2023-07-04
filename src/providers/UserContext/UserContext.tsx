@@ -5,11 +5,11 @@ import {
 	IUserLoginResponse,
 	IUserProviderProps,
 } from "./types"
-import { api } from "../../../services/api"
-import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
+import { api } from "../../services/api"
+import { TRegisterFormValues } from "../../components/RegisterForm/registerFormSchema"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
-import { TLoginFormValues } from "../../LoginForm/loginFormSchema"
+import { TLoginFormValues } from "../../components/LoginForm/loginFormSchema"
 
 export const UserContext = createContext({} as IUserContext)
 
