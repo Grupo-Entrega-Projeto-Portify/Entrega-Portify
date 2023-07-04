@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const MainRegisterCSS = styled.main`
 width: 100vw;
-height: 100%;
+height: 100vh;
 
 display: flex;
 justify-content: center;
@@ -21,8 +21,13 @@ margin: 250px auto;
 
 }
 
-.main__button{
-margin-bottom: 10px;
+.main__backButton{
+    display: flex;
+    gap: 7px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+
+    cursor: pointer;
 }
 
 .main__title{
@@ -39,15 +44,17 @@ color: rgba(0,0,0,0.5);
 
 font-family: "roboto", sans-serif;
 
-margin-bottom: 10px;
+margin-bottom: 30px;
 }
 
 .main__div-input{
 display: flex;
 flex-wrap: wrap;
 width: 100%;
-gap: 5px;
+gap: 7px;
 }
+
+
 
 .main__input{
 max-width: 540px;
@@ -59,5 +66,24 @@ border: 1px solid var(--color-primary);
 height: 64px;
 
 outline: none;
+}
+
+@media (max-width: 1220px) {
+    .main__input{
+        max-width: 100%;  
+    }
+}
+
+@media (max-width: 500px) {
+    .main__title{
+        font-size: var(--title-mobile);
+    }
+
+
+    .main__section{
+
+
+margin: 70px auto;
+}
 }
 `
