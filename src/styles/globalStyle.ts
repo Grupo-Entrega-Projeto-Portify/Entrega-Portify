@@ -10,6 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     --header: #0F1411;
     --footer: #F5F5F5;
 
+    --Sucess: #3FE864;
+    --Negative: #E83F5B;
+
     --grey-1: #0F1411;
     --grey-0: #F5F5F5;
 

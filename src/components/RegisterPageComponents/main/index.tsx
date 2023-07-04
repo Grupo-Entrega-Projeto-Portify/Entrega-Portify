@@ -1,9 +1,13 @@
+
 import { MainRegisterCSS } from "./main"
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 
 
+
 export const MainRegister = () => {
+
+
 
 
     return(

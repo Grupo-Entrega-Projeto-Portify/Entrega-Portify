@@ -8,7 +8,7 @@ import { RegisterForm } from "../components/RegisterForm"
 export const RoutesMain = () => {
     return (
         <Routes>
-            <Route path="/Cadastro" element={<RegisterForm />} />
+            <Route path="/registerpage" element={<RegisterPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/loginpage" element={<LoginPage />} />
         </Routes >
