@@ -22,8 +22,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 			const { data } = await api.post("/users", formData)
 			console.log(data)
 			console.log("Cadastro efetuado com sucesso!")
+			toast.success("Cadastro efetuado com sucesso!")
             navigate("/loginpage")
 		} catch (error) {
+            toast.error("Ops! Algo deu errado")
 			console.log(error)
 		}
 	}
@@ -35,6 +37,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 			localStorage.setItem("@TOKEN", data.accessToken)
 			localStorage.setItem("@USERID", JSON.stringify(data.user.id))
 			toast.success("Login realizado com sucesso!")
+            navigate("/userPage")
 		} catch (error) {
             toast.error("Ops! Algo deu errado")
 			console.log(error)

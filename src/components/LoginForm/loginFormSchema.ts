@@ -6,7 +6,7 @@ export const loginFormSchema = z.object({
     .regex(/(?=.*?[A-Z])/, "É necessário pelo menos uma letra maiúscula.")
     .regex(/(?=.*?[a-z])/, "É necessário pelo menos uma letra minúscula.")
     .regex(/(?=.*?[0-9])/, "É necessário pelo menos um número.")
-    .regex(/(?=.[}{,.^?~=+\-_\!@%/\-+.\|])/, 'É necessário pelo menos um caractere especial')
+    .regex(/^[a-zA-Z0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+$/, 'É necessário pelo menos um caractere especial')
 })
 
 export type TLoginFormValues = z.infer<typeof loginFormSchema>
