@@ -1,3 +1,4 @@
+import { TLoginFormValues } from "../../LoginForm/loginFormSchema"
 import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
 
 export interface IUserProviderProps {
@@ -18,6 +19,6 @@ export interface IUserLoginResponse {
 export interface IUserContext {
 	user: IUser | null
 	userRegister: (formData: TRegisterFormValues) => void
-	userLogin: (formData: any) => void
+	userLogin: (formData: TLoginFormValues) => void
 	userLogout: () => void
 }
