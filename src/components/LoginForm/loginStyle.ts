@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const MainLoginCSS = styled.main`
   width: 100vw;
-  height: 100vh;
-
-  margin-bottom: 108px;
+  min-height: 100vh;
 
   .main__section {
     max-width: 1728px;
     width: 70%;
+    height: 100%;
     margin: 80px auto;
   }
 
@@ -16,12 +15,10 @@ export const MainLoginCSS = styled.main`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  .main__mgDiv {
-  }
-
-  .text__error{
+  .text__error {
     color: var(--Negative);
     font-size: var(--title-4);
     font-weight: var(--600);
@@ -65,6 +62,8 @@ export const MainLoginCSS = styled.main`
     width: 100%;
 
     border-radius: 8px;
+    outline: none;
+
   }
 
   .main__form {
@@ -86,7 +85,7 @@ export const MainLoginCSS = styled.main`
     border-radius: 255px;
     border: none;
 
-margin-top: 27px;
+    margin-top: 27px;
 
     font-size: var(--title-2);
     font-weight: var(--700);
@@ -95,35 +94,27 @@ margin-top: 27px;
     background-color: var(--color-primary);
   }
 
-  .main__p{
+  .main__p {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: var(--title-2);
     color: rgba(0, 0, 0, 0.5s);
   }
 
-  .main__goToRegister{
-
+  .main__goToRegister {
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
     width: 173px;
     height: 55px;
 
-    text-decoration: none; 
+    text-decoration: none;
 
     border-radius: 255px;
 
     font-weight: var(--700);
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
-  }
-
-  @media (max-width: 769px) {
-    .div__conteiner{
-        flex-direction: column;
-    }
-
   }
 `;

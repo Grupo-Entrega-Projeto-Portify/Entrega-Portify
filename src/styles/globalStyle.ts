@@ -60,10 +60,7 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 
-#root{
-    height: 100vh;
-    width: 100vw;
-}
+
 
 html{
     overflow-x: hidden;
