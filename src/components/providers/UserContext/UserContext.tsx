@@ -7,7 +7,12 @@ import {
 } from "./types"
 import { api } from "../../../services/api"
 import { TRegisterFormValues } from "../../RegisterForm/registerFormSchema"
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom"
+=======
+import { toast } from "react-toastify"
+import { TLoginFormValues } from "../../LoginForm/loginFormSchema"
+>>>>>>> feat/criação-das-demais-tags-loginForm
 
 export const UserContext = createContext({} as IUserContext)
 
@@ -26,7 +31,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 		}
 	}
 
-	const userLogin = async (formData: any) => {
+	const userLogin = async (formData: TLoginFormValues) => {
 		try {
 			const { data } = await api.post<IUserLoginResponse>(
 				"/sessions",
@@ -35,7 +40,9 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 			setUser(data.user)
 			localStorage.setItem("@TOKEN", data.accessToken)
 			localStorage.setItem("@USERID", JSON.stringify(data.user.id))
+			toast.success("Login realizado com sucesso!")
 		} catch (error) {
+            toast.error("Ops! Algo deu errado")
 			console.log(error)
 		}
 	}
