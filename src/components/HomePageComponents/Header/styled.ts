@@ -30,29 +30,33 @@ export const HeaderCadastroCSS = styled.header`
   }
 
   .header__register {
-    background-color: transparent;
-    border: none;
-    color: var(--background);
-    cursor: pointer;
-    font-size: var(--600);
-    font-weight: var(--600);
-  }
+  background-color: transparent;
+  border: none;
+  color: var(--background);
+  cursor: pointer;
+  font-size: var(--600);
+  font-weight: var(--600);
+  text-decoration: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .header__button {
-    border-radius: 255px;
-    border: none;
-
-    color: #ffffff;
-    background-color: var(--color-primary);
-
-    width: 212px;
-    height: 44px;
-
-    font-size: var(--title-2);
-    font-weight: var(--700);
-
-    transition: 0.5s;
-  }
+.header__button {
+  border-radius: 255px;
+  border: none;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  width: 212px;
+  height: 44px;
+  font-size: var(--title-2);
+  font-weight: var(--700);
+  transition: 0.5s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .header__button:hover {
     background-color: var(--color-primary-70);
