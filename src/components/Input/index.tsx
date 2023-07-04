@@ -9,9 +9,10 @@ interface IInputProps {
 }
 export const Input = ({ className, type, placeholder, register, label }: IInputProps) => {
 	return (
-		<div className="main__fieldset">
+		<>
             {label ? <label>{label}</label> : null}
 			<input className={className} type={type} placeholder={placeholder} {...register} />
-		</div>
+		</>
+
 	);
 };
