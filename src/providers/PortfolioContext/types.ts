@@ -11,6 +11,8 @@ export interface IPortfolioContext {
 	setModalEdit: React.Dispatch<React.SetStateAction<boolean>>;
 	modalDelete: boolean;
 	setModalDelete: React.Dispatch<React.SetStateAction<boolean>>;
+	modalCreatePortfolio: boolean;
+	setModalCreatePortfolio: React.Dispatch<React.SetStateAction<boolean>>;
 	portfolios: IPortfolio[];
 	fetchPortfolios: () => Promise<void>;
 	createPortfolio: (portfolioData: ICreatePortfolioInput) => Promise<void>;

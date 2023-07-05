@@ -7,7 +7,7 @@ interface IModalProps {
 }
 
 export function Modal ({ children }: IModalProps) {
-    const { setModalCreate, setModalEdit, setModalDelete } = useContext(PortfolioContext)
+    const { setModalCreate, setModalEdit, setModalDelete, setModalCreatePortfolio } = useContext(PortfolioContext)
 
     const modalRef = useRef<HTMLDivElement | null>(null)
 
@@ -17,6 +17,7 @@ export function Modal ({ children }: IModalProps) {
                 setModalCreate(false)
                 setModalEdit(false)
                 setModalDelete(false)
+                setModalCreatePortfolio(false)
             }
         }
         
@@ -33,6 +34,7 @@ export function Modal ({ children }: IModalProps) {
                 setModalCreate(false)
                 setModalEdit(false)
                 setModalDelete(false)
+                setModalCreatePortfolio(false)
             }
         }
 

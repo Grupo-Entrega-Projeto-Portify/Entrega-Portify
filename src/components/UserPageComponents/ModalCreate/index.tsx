@@ -15,7 +15,8 @@ export const ModalCreate = () => {
     })
 
     const { modalCreate, setModalCreate } = useContext(PortfolioContext)
-    const { createProject } = useContext(ProjectContext);
+
+    const { createProject } = useContext(ProjectContext)
 
     const submit:SubmitHandler<TCreateModalValues> = (dataForm) => {
         console.log(dataForm)

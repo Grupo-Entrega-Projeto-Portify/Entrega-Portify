@@ -10,7 +10,7 @@ export const ModalDelete = () => {
         <div>
             <RiDeleteBin6Line onClick={() => setModalDelete(true)}/>
             {modalDelete ? <Modal>
-                <h1>Cancelar projeto</h1>
+                <h1>Deletar projeto</h1>
                 <button onClick={() => setModalDelete(false)}>X</button>
                 <div>
                     <span>Deseja deletar o (nome do projeto)?</span>

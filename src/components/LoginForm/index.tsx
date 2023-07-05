@@ -10,6 +10,7 @@ import { UserContext } from "../../providers/UserContext/UserContext";
 import { ModalCreate } from "../UserPageComponents/ModalCreate/index.tsx"
 import { ModalEdit} from "../UserPageComponents/ModalEdit/index.tsx"
 import { ModalDelete} from "../UserPageComponents/ModalDelete/index.tsx"
+import { ModalCreatePortfolio } from "../UserPageComponents/ModalCreatePortfolio/index.tsx"
 
 export const LoginForm = () => {
   const {
@@ -73,6 +74,7 @@ export const LoginForm = () => {
         <ModalCreate />
         <ModalEdit />
         <ModalDelete />
+        <ModalCreatePortfolio />
     </MainLoginCSS>
   );
 };
