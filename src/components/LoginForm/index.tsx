@@ -7,8 +7,9 @@ import { useContext } from "react";
 import { MainLoginCSS } from "./loginStyle";
 import fotoLogin from "../../assets/photoLogin.svg"
 import { UserContext } from "../../providers/UserContext/UserContext";
-import { PortifolioContext } from "../../providers/PortfolioContext/PortfolioContext";
-import { Modal } from "../Modal";
+import { ModalCreate } from "../UserPageComponents/ModalCreate/index.tsx"
+import { ModalEdit} from "../UserPageComponents/ModalEdit/index.tsx"
+import { ModalDelete} from "../UserPageComponents/ModalDelete/index.tsx"
 
 export const LoginForm = () => {
   const {
@@ -21,8 +22,6 @@ export const LoginForm = () => {
   });
 
   const { userLogin } = useContext(UserContext);
-
-  const { modalCreate, setModalCreate, modalEdit, setModalEdit, modalDelete, setModalDelete } = useContext(PortifolioContext);
 
   const submit: SubmitHandler<TLoginFormValues> = (dataForm) => {
     userLogin(dataForm);
@@ -70,100 +69,10 @@ export const LoginForm = () => {
             </div>
         </div>
       </section>
-      <button onClick={() => setModalCreate(true)}>Criar projeto</button>
-      {modalCreate ? <Modal>
-        <h1>Criar projeto</h1>
-        <button onClick={() => setModalCreate(false)}>X</button>
-        <form >
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="Nome"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="Descrição resumida"
-                register={register("email")}
-            />        
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="Repositório"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="Link do deploy (opcional)"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="URL da imagem (opcional)"
-                register={register("email")}
-            />
 
-            <button>Criar projeto</button>
-        </form>
-      </Modal> :null}
-
-
-      <button onClick={() => setModalEdit(true)}>Editar projeto</button>
-      {modalEdit ? <Modal>
-        <h1>Editar projeto</h1>
-        <button onClick={() => setModalEdit(false)}>X</button>
-        <form >
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="aparecer nome do projeto"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="conteúdo já existente"
-                register={register("email")}
-            />        
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="link se tiver ou não"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="Link do deploy (opcional)"
-                register={register("email")}
-            />
-            <Input
-                className="main__input"
-                type="text"
-                placeholder="URL da imagem (opcional)"
-                register={register("email")}
-            />
-
-            <button>Editar projeto</button>
-        </form>
-      </Modal> :null}
-
-
-      <button onClick={() => setModalDelete(true)}>Deletar projeto</button>
-      {modalDelete ? <Modal>
-        <h1>Cancelar projeto</h1>
-        <button onClick={() => setModalDelete(false)}>X</button>
-        <div>
-
-            <span>Deseja deletar o (nome do projeto)?</span>
-            <button onClick={() => setModalDelete(false)}>cancelar</button>
-            <button>deletar</button>
-        </div>
-      </Modal> :null}
-
+        <ModalCreate />
+        <ModalEdit />
+        <ModalDelete />
     </MainLoginCSS>
   );
 };

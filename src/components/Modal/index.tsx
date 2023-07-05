@@ -1,13 +1,13 @@
 import { useContext, useEffect, useRef } from "react";
 import { StyledModal } from "./modal";
-import { PortifolioContext } from "../../providers/PortfolioContext/PortfolioContext";
+import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext";
 
 interface IModalProps {
     children: React.ReactNode;
 }
 
 export function Modal ({ children }: IModalProps) {
-    const { setModalCreate, setModalEdit, setModalDelete } = useContext(PortifolioContext)
+    const { setModalCreate, setModalEdit, setModalDelete } = useContext(PortfolioContext)
 
     const modalRef = useRef<HTMLDivElement | null>(null)
 

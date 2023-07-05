@@ -9,7 +9,7 @@ import {
 import { api } from "../../services/api";
 import { UserContext } from "../UserContext/UserContext";
 
-export const PortfolioContext = createContext({} as IPortifolioContext);
+export const PortfolioContext = createContext({} as IPortfolioContext);
 
 export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [modalCreate, setModalCreate] = useState(false);

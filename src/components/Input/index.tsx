@@ -3,7 +3,7 @@ import { UseFormRegisterReturn } from "react-hook-form";
 interface IInputProps {
 	type: "text" | "email" | "number" | "password";
 	placeholder?: string;
-	register: UseFormRegisterReturn<string>;
+	register?: UseFormRegisterReturn<string>;
 	label?: string;
 	className?: string;
 }
