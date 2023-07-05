@@ -20,9 +20,26 @@ height: 108px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer__text{
     color: black;
+}
+
+@media (max-width: 769px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer__div{
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__text{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
 }
 `

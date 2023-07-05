@@ -26,6 +26,13 @@ export const MainRegisterCSS = styled.main`
 
   .main__back {
     text-decoration: none;
+    color: var(--color-primary);
+    transition: 0.5s;
+    font-weight: var(--700);
+  }
+
+  .main__back:hover{
+    color: var(--color-primary-70);
   }
 
   .main__backButton {

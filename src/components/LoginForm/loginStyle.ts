@@ -62,6 +62,7 @@ export const MainLoginCSS = styled.main`
     width: 100%;
 
     border-radius: 8px;
+    padding-left: 7px;
     outline: none;
 
   }
@@ -92,6 +93,11 @@ export const MainLoginCSS = styled.main`
 
     color: #ffffff;
     background-color: var(--color-primary);
+    transition: 0.5s;
+  }
+
+  .main__button:hover{
+    background-color: var(--color-primary-70);
   }
 
   .main__p {
@@ -113,8 +119,15 @@ export const MainLoginCSS = styled.main`
 
     border-radius: 255px;
 
+    transition: 0.5s;
+
     font-weight: var(--700);
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
+  }
+
+  .main__goToRegister:hover{
+    background-color: var(--color-primary-70);
+    color: #ffffff;
   }
 `;

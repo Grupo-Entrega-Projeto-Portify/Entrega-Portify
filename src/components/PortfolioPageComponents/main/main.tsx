@@ -2,7 +2,7 @@ import { MainPortifolioCSS } from "./mainStyle";
 import logo from "../../../assets/HomePage/iconLiPortify.svg";
 import { AiFillGithub } from "react-icons/ai";
 import { AiOutlinePaperClip } from "react-icons/ai";
-import React from "react";
+
 
 
 export const MainPortifolioPage = () => {
