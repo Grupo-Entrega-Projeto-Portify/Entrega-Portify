@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from "react";
 import { StyledModal } from "./modal";
-import { PortifolioContext } from "../../providers/PortifolioContext/PortifolioContext";
+import { PortifolioContext } from "../../providers/PortfolioContext/PortfolioContext";
 
 interface IModalProps {
     children: React.ReactNode;

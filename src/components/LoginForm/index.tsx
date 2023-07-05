@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { MainLoginCSS } from "./loginStyle";
 import fotoLogin from "../../assets/photoLogin.svg"
 import { UserContext } from "../../providers/UserContext/UserContext";
-import { PortifolioContext } from "../../providers/PortifolioContext/PortifolioContext";
+import { PortifolioContext } from "../../providers/PortfolioContext/PortfolioContext";
 import { Modal } from "../Modal";
 
 export const LoginForm = () => {
