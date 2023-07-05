@@ -42,11 +42,13 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 			console.log(error)
 		}
 	}
+	
 
 	const userLogout = () => {
 		setUser(null)
 		localStorage.removeItem("@TOKEN")
-		localStorage.removeItem("@USERID")
+		localStorage.removeItem("@USER")
+		navigate("/")
 	}
 
 	return (

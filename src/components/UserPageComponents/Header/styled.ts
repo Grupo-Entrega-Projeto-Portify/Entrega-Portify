@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderUserPageCSS = styled.header`
   width: 100vw;
@@ -43,6 +43,7 @@ export const HeaderUserPageCSS = styled.header`
   }
 
   .header__button:hover {
+    border: 1px solid var(--color-primary-70);
     background-color: var(--color-primary-70);
   }
 

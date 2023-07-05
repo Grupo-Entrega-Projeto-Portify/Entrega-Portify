@@ -1,10 +1,12 @@
 
 import { HeaderUserPageCSS } from "./styled"
 import logo from "../../../assets/Logo.png"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { UserContext } from "../../../providers/UserContext/UserContext"
+
 
 export const HeaderUserPage = () => {
-
+    const { userLogout } = useContext(UserContext)
     const [userName, setUserName] = useState("")
 
     useEffect(() => {
@@ -23,7 +25,7 @@ export const HeaderUserPage = () => {
                         <img src={logo} alt="logo da Portify" />
                         <div className="header__divButton">
                             <p className="header__userName">{userName}</p>
-                            <button className="header__button">Sair</button>
+                            <button className="header__button" onClick={userLogout}>Sair</button>
                         </div>
                     </div>
                 </nav>
