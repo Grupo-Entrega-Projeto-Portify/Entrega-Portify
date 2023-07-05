@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
 import { AiOutlinePlusCircle } from "react-icons/ai"
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext"
 // import React from "react"
 
 export const ModalCreate = () => {
@@ -14,10 +15,17 @@ export const ModalCreate = () => {
     })
 
     const { modalCreate, setModalCreate } = useContext(PortfolioContext)
+    const { createProject } = useContext(ProjectContext);
 
     const submit:SubmitHandler<TCreateModalValues> = (dataForm) => {
         console.log(dataForm)
-        reset()
+        createProject({
+            portfolioId: dataForm.portfolioId,
+            name: dataForm.name,
+            repository: dataForm.repository,
+            link: dataForm.link,
+          });
+            reset();
     }
     return (
             <div>

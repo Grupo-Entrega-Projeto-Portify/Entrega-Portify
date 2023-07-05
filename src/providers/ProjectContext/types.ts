@@ -5,11 +5,9 @@ export interface IProjectProviderProps {
 export interface IProjectContext {
 	projects: IProject[];
 	createProject: (
-		portfolioId: number,
 		projectData: ICreateProjectInput
 	) => Promise<void>;
 	updateProject: (
-		projectId: number,
 		projectData: IUpdateProjectInput
 	) => Promise<void>;
 	deleteProject: (projectId: number) => Promise<void>;
