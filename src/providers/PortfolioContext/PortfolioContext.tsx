@@ -1,27 +1,28 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import {
 	IPortfolio,
-	IPortifolioContext,
-	IPortifolioProviderProps,
-	IProject,
+	IPortfolioContext,
+	IPortfolioProviderProps,
 	ICreatePortfolioInput,
 	IUpdatePortfolioInput,
 } from "./types";
 import { api } from "../../services/api";
 import { UserContext } from "../UserContext/UserContext";
 
-export const PortifolioContext = createContext({} as IPortifolioContext);
+export const PortfolioContext = createContext({} as IPortifolioContext);
 
-export const PortifolioProvider = ({ children }: IPortifolioProviderProps) => {
-    const [modalCreate, setModalCreate] = useState(false)
-    const [modalEdit, setModalEdit] = useState(false)
-    const [modalDelete, setModalDelete] = useState(false)
+export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
+	const [modalCreate, setModalCreate] = useState(false);
+	const [modalEdit, setModalEdit] = useState(false);
+	const [modalDelete, setModalDelete] = useState(false);
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
 
 	useEffect(() => {
-		fetchPortfolios();
-	}, []);
+		if (user) {
+			fetchPortfolios();
+		}
+	}, [user]);
 
 	const fetchPortfolios = async () => {
 		try {
@@ -73,13 +74,21 @@ export const PortifolioProvider = ({ children }: IPortifolioProviderProps) => {
 	};
 
 	return (
-		<PortifolioContext.Provider
-			value={{ modalCreate, setModalCreate, modalEdit, setModalEdit, modalDelete, setModalDelete, portfolios, fetchPortfolios, createPortfolio,
-                updatePortfolio, }}
+		<PortfolioContext.Provider
+			value={{
+				modalCreate,
+				setModalCreate,
+				modalEdit,
+				setModalEdit,
+				modalDelete,
+				setModalDelete,
+				portfolios,
+				fetchPortfolios,
+				createPortfolio,
+				updatePortfolio,
+			}}
 		>
 			{children}
-		</PortifolioContext.Provider>
+		</PortfolioContext.Provider>
 	);
 };
-
-

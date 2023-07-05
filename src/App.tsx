@@ -3,7 +3,7 @@ import { RoutesMain } from "../src/Router/RouterMain"
 import { GlobalStyle } from "./styles/globalStyle"
 import { ResetCSS } from "./styles/reset"
 import { UserProvider } from "./providers/UserContext/UserContext"
-import { PortifolioProvider } from "./providers/PortifolioContext/PortifolioContext"
+import { PortifolioProvider } from "./providers/PortfolioContext/PortfolioContext"
 
 function App() {
   return (
