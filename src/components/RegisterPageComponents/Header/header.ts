@@ -34,7 +34,13 @@ export const HeaderCadastroCSS = styled.header`
     color: #ffffff;
     font-size: var(--title-2);
     text-decoration: none;
+
+    transition: 0.5s;
   }
+
+.header__register:hover{
+  color: var(--color-primary);
+}
 
   .header__button {
     border-radius: 255px;

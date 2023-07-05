@@ -56,10 +56,14 @@ export const GlobalStyle = createGlobalStyle`
     --500: 500;
     --400: 400;
 
-    --transition: 0.5s;
+
 
 }
 
+
+#root{
+    max-height: 100vh;
+}
 
 
 html{

@@ -31,7 +31,7 @@ export const RegisterForm = () => {
             <AiOutlineArrowLeft /> Voltar
           </Link>
 
-          <h1 className="main__title">CADASTRE-SE</h1>
+          <h1 className="main__title">Cadastre-se</h1>
           <p className="main__text">
             Preencha os campos abaixo para criar uma conta
           </p>
