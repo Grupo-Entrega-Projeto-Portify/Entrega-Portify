@@ -7,7 +7,7 @@ interface IModalProps {
 }
 
 export function Modal ({ children }: IModalProps) {
-    const { modalCreate, setModalCreate } = useContext(PortifolioContext)
+    const { setModalCreate, setModalEdit, setModalDelete } = useContext(PortifolioContext)
 
     const modalRef = useRef<HTMLDivElement | null>(null)
 
@@ -15,6 +15,8 @@ export function Modal ({ children }: IModalProps) {
         const handleOutclick = (event: MouseEvent) => {
             if(!modalRef.current?.contains(event.target as Node)) {
                 setModalCreate(false)
+                setModalEdit(false)
+                setModalDelete(false)
             }
         }
         
@@ -25,11 +27,12 @@ export function Modal ({ children }: IModalProps) {
         }
     }, [])
 
-    // const buttonRef = useRef(null)
     useEffect(() => {
         const handleKeydown = (event: KeyboardEventInit) => {
             if(event.key === "Escape") {
                 setModalCreate(false)
+                setModalEdit(false)
+                setModalDelete(false)
             }
         }
 

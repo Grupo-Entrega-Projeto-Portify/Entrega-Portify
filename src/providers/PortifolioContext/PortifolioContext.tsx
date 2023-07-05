@@ -13,7 +13,9 @@ import { UserContext } from "../UserContext/UserContext";
 export const PortifolioContext = createContext({} as IPortifolioContext);
 
 export const PortifolioProvider = ({ children }: IPortifolioProviderProps) => {
-	const [modalCreate, setModalCreate] = useState(false);
+    const [modalCreate, setModalCreate] = useState(false)
+    const [modalEdit, setModalEdit] = useState(false)
+    const [modalDelete, setModalDelete] = useState(false)
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
 
@@ -72,10 +74,12 @@ export const PortifolioProvider = ({ children }: IPortifolioProviderProps) => {
 
 	return (
 		<PortifolioContext.Provider
-			value={{ modalCreate, setModalCreate, portfolios, fetchPortfolios, createPortfolio,
+			value={{ modalCreate, setModalCreate, modalEdit, setModalEdit, modalDelete, setModalDelete, portfolios, fetchPortfolios, createPortfolio,
                 updatePortfolio, }}
 		>
 			{children}
 		</PortifolioContext.Provider>
 	);
 };
+
+
