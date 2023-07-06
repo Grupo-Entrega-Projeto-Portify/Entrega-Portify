@@ -4,7 +4,7 @@ import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioC
 import { Input } from "../../Input"
 import { useForm } from "react-hook-form"
 import { MdOutlineModeEditOutline } from "react-icons/md"
-import { StyledModalCreate } from "./index.ts"
+import { StyledDiv, StyledModalCreate } from "./index.ts"
 
 export const ModalEdit = () => {
     const { handleSubmit, reset} = useForm()
@@ -16,8 +16,8 @@ export const ModalEdit = () => {
         reset()
     }
     return (
-            <div>
-                <MdOutlineModeEditOutline onClick={() => setModalEdit(true)}/>
+            <StyledDiv>
+                <MdOutlineModeEditOutline className="edit" onClick={() => setModalEdit(true)}/>
                 {modalEdit ? <Modal>
                     <StyledModalCreate>
                         <div className="headerDiv">
@@ -57,6 +57,6 @@ export const ModalEdit = () => {
                         </form>
                     </StyledModalCreate>
                 </Modal> :null}
-            </div>
+            </StyledDiv>
     )
 }

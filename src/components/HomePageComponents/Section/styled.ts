@@ -77,11 +77,17 @@ export const ButtonLogin = styled(Link)`
   font-size: var(--400);
   font-weight: var(--400);
   text-decoration: none;
+  transition: 0.5s;
 
   @media (max-width: 1224px) {
     font-size: var(--title-4);
     font-weight: var(--400);
     padding: 0.5rem;
+  }
+
+  :hover {
+    background-color: var(--color-primary-70);
+    color: #ffffff;
   }
 `;
 

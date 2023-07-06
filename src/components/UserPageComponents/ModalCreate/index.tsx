@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext"
-import { StyledModalCreate } from "."
+import { StyledDiv, StyledModalCreate } from "./index"
 
 export const ModalCreate = () => {
     const { register, handleSubmit, reset, formState: { errors }} = useForm<TCreateModalValues>({
@@ -29,8 +29,8 @@ export const ModalCreate = () => {
             reset();
     }
     return (
-            <div>
-                <button onClick={() => setModalCreate(true)}><AiOutlinePlusCircle /> Adicionar projeto</button>
+            <StyledDiv>
+                <button className="styleAddButton" onClick={() => setModalCreate(true)}><AiOutlinePlusCircle className="iconPlus"/> Adicionar projeto</button>
                 {modalCreate ? <Modal>
                     <StyledModalCreate>
                         <div className="headerDiv">
@@ -73,6 +73,6 @@ export const ModalCreate = () => {
                         </form>
                     </StyledModalCreate>
                 </Modal> :null}
-            </div>
+            </StyledDiv>
     )
 }

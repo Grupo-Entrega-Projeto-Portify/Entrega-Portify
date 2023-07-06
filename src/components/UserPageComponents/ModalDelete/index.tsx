@@ -2,14 +2,14 @@ import { useContext } from "react"
 import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
 import { Modal } from "../../Modal"
 import { RiDeleteBin6Line } from "react-icons/ri"
-import { StyledModalDelete } from "./index.ts"
+import { StyledDiv, StyledModalDelete } from "./index.ts"
 
 export const ModalDelete = () => {
     const { modalDelete, setModalDelete } = useContext(PortfolioContext)
 
     return (
-        <div>
-            <RiDeleteBin6Line onClick={() => setModalDelete(true)}/>
+        <StyledDiv>
+            <RiDeleteBin6Line className="trash" onClick={() => setModalDelete(true)}/>
             {modalDelete ? <Modal>
                 <StyledModalDelete >
                     <div className="headerDiv">
@@ -23,6 +23,6 @@ export const ModalDelete = () => {
                     </div>
                 </StyledModalDelete>
             </Modal> :null}
-        </div>
+        </StyledDiv>
     )
 }

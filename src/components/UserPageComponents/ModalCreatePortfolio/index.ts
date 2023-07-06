@@ -37,6 +37,8 @@ export const StyledModalCreate = styled.div`
         padding-bottom: 30px;
 
         cursor: pointer;
+
+        transition: 0.5s;
     }
 
     select {

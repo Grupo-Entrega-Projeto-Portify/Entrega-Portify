@@ -56,6 +56,12 @@ export const HeaderCadastroCSS = styled.header`
     font-weight: var(--700);
 
     transition: 0.5s;
+
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .header__button:hover {

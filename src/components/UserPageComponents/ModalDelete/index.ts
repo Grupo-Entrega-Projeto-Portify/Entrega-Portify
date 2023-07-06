@@ -41,6 +41,12 @@ export const StyledModalDelete = styled.div`
         padding-bottom: 30px;
 
         cursor: pointer;
+        
+        transition: 0.5s;
+    }
+
+    .buttonClose:hover {
+        color: black;
     }
 
     span {
@@ -75,6 +81,10 @@ export const StyledModalDelete = styled.div`
         cursor: pointer;
     }
 
+    .buttonDelete:hover {
+        background-color: var(--color-primary-70);
+    }
+
     .buttonCancel {
         width: 150px;
         height: 55px;
@@ -91,6 +101,26 @@ export const StyledModalDelete = styled.div`
         cursor: pointer;
 
         font-weight: var(--700);
+
         color: var(--color-primary);
+
+        transition: 0.5s;
+    }
+
+    .buttonCancel:hover {
+        background-color: var(--color-primary-70);
+
+        color: #ffffff;
+    }
+`
+
+export const StyledDiv = styled.div`
+
+    .trash {
+        color: var(--color-primary);
+
+        font-size: 30px;
+
+        cursor: pointer;
     }
 `
