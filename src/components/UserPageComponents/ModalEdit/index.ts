@@ -35,6 +35,12 @@ export const StyledModalCreate = styled.div`
         padding-bottom: 30px;
 
         cursor: pointer;
+
+        transition: 0.5s;
+    }
+
+    .buttonClose:hover {
+        color: black;
     }
 
     .inputModal {
@@ -74,6 +80,23 @@ export const StyledModalCreate = styled.div`
 
         font-weight: 700;
         font-size: 14px;
+
+        cursor: pointer;
+
+        transition: 0.5s;
+    }
+
+    .buttonCreateProject:hover {
+        background-color: var(--color-primary-70);
+    }
+`
+
+export const StyledDiv = styled.div`
+
+    .edit {
+        color: var(--color-primary);
+
+        font-size: 30px;
 
         cursor: pointer;
     }

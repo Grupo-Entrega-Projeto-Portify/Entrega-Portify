@@ -36,6 +36,12 @@ export const StyledModalCreate = styled.div`
         padding-bottom: 30px;
 
         cursor: pointer;
+
+        transition: 0.5s;
+    }
+
+    .buttonClose:hover {
+        color: black;
     }
 
     .inputModal {
@@ -75,6 +81,49 @@ export const StyledModalCreate = styled.div`
 
         font-weight: 700;
         font-size: 14px;
+
+        cursor: pointer;
+    }
+
+    .buttonCreateProject:hover {
+        background-color: var(--color-primary-70);
+    }
+`
+
+export const StyledDiv = styled.div`
+
+    .styleAddButton {
+        font-weight: 700;
+        font-size: 14px;
+
+        color: #FFFFFF;
+
+        background-color: var(--color-primary);
+
+        border: none;
+
+        border-radius: 255px;
+
+        padding: 10px 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        cursor: pointer;
+
+        transition: 0.5s;
+    }
+
+    .styleAddButton:hover {
+        background-color: var(--color-primary-70);
+    }
+
+    .iconPlus {
+        color: #FFFFFF;
+
+        font-size: 30px;
 
         cursor: pointer;
     }

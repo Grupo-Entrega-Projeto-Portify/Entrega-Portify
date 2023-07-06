@@ -11,7 +11,7 @@ export const HeaderRegister = () => {
             <Link to="/"><img src={logo} alt="logo da Portify" /></Link>
             <div className="header__divButton">
               <Link to={"/registerpage"} className="header__register">Cadastre-se</Link>
-              <button className="header__button">acesse seu portfólio</button>
+              <Link to={"/loginpage"} className="header__button">acesse seu portfólio</Link>
             </div>
           </div>
         </nav>
