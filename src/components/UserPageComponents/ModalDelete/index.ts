@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const StyledModalDelete = styled.div`
     background-color: #FFFFFF;
 
-    height: 100%;
+    height: 70%;
     width: 100%;
 
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
+    gap: 60px;
 
     h1 {
         font-weight: 700;
@@ -24,7 +25,8 @@ export const StyledModalDelete = styled.div`
         justify-content: space-between;
         align-items: center;
 
-        margin-bottom: 40px;
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
 
     .buttonClose {
@@ -44,6 +46,15 @@ export const StyledModalDelete = styled.div`
     span {
         font-size: 24px;
         font-weight: 500;
+    }
+
+    .styleButtons {
+        width: 80%;
+        height: 90px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .buttonDelete {

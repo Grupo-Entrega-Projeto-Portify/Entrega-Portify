@@ -17,7 +17,7 @@ export const ModalDelete = () => {
                         <button className="buttonClose" onClick={() => setModalDelete(false)}>X</button>
                     </div>
                         <span>Deseja deletar o (nome do projeto)?</span>
-                    <div>
+                    <div className="styleButtons">
                         <button className="buttonCancel" onClick={() => setModalDelete(false)}>cancelar</button>
                         <button className="buttonDelete">deletar</button>
                     </div>
