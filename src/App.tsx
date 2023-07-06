@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom"
-import { RoutesMain } from "../src/Router/RouterMain"
+import { RoutesMain } from "./Router/RouterMain"
 import { GlobalStyle } from "./styles/globalStyle"
 import { ResetCSS } from "./styles/reset"
 import { UserProvider } from "./providers/UserContext/UserContext"

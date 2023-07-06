@@ -65,8 +65,8 @@ export const MainPortifolioCSS = styled.main`
     gap: 20px;
 
 
-    max-height: 500px;
-    height: 500px;
+    max-height: 520px;
+    height: 520px;
     overflow-y: auto;
   }
 

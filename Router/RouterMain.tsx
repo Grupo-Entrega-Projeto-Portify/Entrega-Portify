@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom"
-import { RegisterPage } from "../Pages/Cadastro"
-import { HomePage } from "../Pages/HomePage"
-import { LoginPage } from "../Pages/LoginPage"
-import { UserPage } from "../Pages/UserPage"
-import { PortfolioPage } from "../Pages/portifolioPage"
+import { RegisterPage } from "../src/Pages/Cadastro"
+import { HomePage } from "../src/Pages/HomePage"
+import { LoginPage } from "../src/Pages/LoginPage"
+import { UserPage } from "../src/Pages/UserPage"
+import { PortfolioPage } from "../src/Pages/portifolioPage"
 
 export const RoutesMain = () => {
     return (
@@ -12,7 +12,6 @@ export const RoutesMain = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/loginpage" element={<LoginPage />} />
             <Route path="/userPage" element={<UserPage />} />
-            <Route path="/portfolios/:userID" element={<PortfolioPage />} />
             <Route path="/partifoliopage" element={<PortfolioPage />} />
         </Routes >
     )

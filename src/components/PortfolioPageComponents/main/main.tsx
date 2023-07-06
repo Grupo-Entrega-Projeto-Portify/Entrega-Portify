@@ -1,9 +1,7 @@
-import { MainPortifolioCSS } from "./mainStyle";
-import logo from "../../../assets/HomePage/iconLiPortify.svg";
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlinePaperClip } from "react-icons/ai";
-
-
+import { MainPortifolioCSS } from "./mainStyle"
+import logo from "../../../assets/HomePage/iconLiPortify.svg"
+import { AiFillGithub } from "react-icons/ai"
+import { AiOutlinePaperClip } from "react-icons/ai"
 
 export const MainPortifolioPage = () => {
   return (
@@ -57,5 +55,5 @@ export const MainPortifolioPage = () => {
         </section>
       </MainPortifolioCSS>
     </>
-  );
-};
+  )
+}
