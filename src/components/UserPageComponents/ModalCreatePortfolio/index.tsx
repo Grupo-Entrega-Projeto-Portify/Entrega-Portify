@@ -5,6 +5,8 @@ import { Input } from "../../Input"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
+import { StyledModalCreate } from "./index.ts"
+
 // import React from "react"
 
 export const ModalCreatePortfolio = () => {
@@ -46,29 +48,35 @@ export const ModalCreatePortfolio = () => {
         <div>
             <button onClick={() => setModalCreatePortfolio(true)}>Publicar portfólio</button>
             {modalCreatePortfolio ? <Modal>
-                <h1>Publicar portfólio</h1>
-                <button onClick={() => setModalCreatePortfolio(false)}>X</button>
-                <form onSubmit={handleSubmit(submit)}>
-                    <select {...register("color")}>
-                        <option value="Claro">Claro</option>
-                        <option value="Escuro">Escuro</option>
-                    </select>
-                    <Input
-                        className="main__input"
-                        type="text"
-                        placeholder="Cargo"
-                        register={register("position")}
-                    />
-                    {errors.position ? <p className="text__error">{errors.position.message}</p> : null}
-                    <Input
-                        className="main__input"
-                        type="text"
-                        placeholder="Descrição"
-                        register={register("description")}
-                    />
-                    <button onClick={() => setModalCreatePortfolio(false)}>cancelar</button>
-                    <button>Publicar</button>
-                </form>
+                <StyledModalCreate >
+                    <div className="headerDiv">
+                        <h1>Publicar portfólio</h1>
+                        <button className="buttonClose" onClick={() => setModalCreatePortfolio(false)}>X</button>
+                    </div>
+                    <form onSubmit={handleSubmit(submit)}>
+                        <select {...register("color")}>
+                            <option value="Claro">Claro</option>
+                            <option value="Escuro">Escuro</option>
+                        </select>
+                        <Input
+                            className="inputModal"
+                            type="text"
+                            placeholder="Cargo"
+                            register={register("position")}
+                        />
+                        {errors.position ? <p className="text__error">{errors.position.message}</p> : null}
+                        <Input
+                            className="inputModal"
+                            type="text"
+                            placeholder="Descrição"
+                            register={register("description")}
+                        />
+                        <div className="styleButtons">
+                            <button className="buttonCancel" onClick={() => setModalCreatePortfolio(false)}>cancelar</button>
+                            <button className="buttonDelete">Publicar</button>
+                        </div>
+                    </form>
+                </StyledModalCreate>
             </Modal> : null}
         </div>
     )
