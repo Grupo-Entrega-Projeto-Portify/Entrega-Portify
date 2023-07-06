@@ -41,6 +41,17 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 		}
 	}, [user, fetchPortfolios]);
 
+	const RenderPortfolios = async (userId) => {
+		try {
+			const response = await api.get(
+				`/portfolios?_embed=projectsprojects&userId=${userId}`
+			);
+			setPortfolios(response.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	const createPortfolio = async (portfolioData: ICreatePortfolioInput) => {
 		try {
 			const token = localStorage.getItem("@TOKEN");
