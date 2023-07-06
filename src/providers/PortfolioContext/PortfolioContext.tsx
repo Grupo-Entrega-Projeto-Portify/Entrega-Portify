@@ -5,16 +5,10 @@ import {
 	IPortfolioProviderProps,
 	ICreatePortfolioInput,
 	IUpdatePortfolioInput,
-<<<<<<< HEAD
-} from "./types"
-import { api } from "../../services/api"
-import { UserContext } from "../UserContext/UserContext"
-=======
 	IUser,
 } from "./types";
 import { api } from "../../services/api";
 import { UserContext } from "../UserContext/UserContext";
->>>>>>> MoficicaçãoNaPaginaPrincipal
 
 export const PortfolioContext = createContext({} as IPortfolioContext);
 
