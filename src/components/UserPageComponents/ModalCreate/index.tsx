@@ -63,19 +63,22 @@ export const ModalCreate = () => {
                                 className="inputModal"
                                 type="text"
                                 placeholder="Repositório"
+                                register={register("repository")}
                             />
                             <Input
                                 className="inputModal"
                                 type="text"
                                 placeholder="Link do deploy (opcional)"
+                                register={register("link")}
                             />
                             <Input
                                 className="inputModal"
                                 type="text"
                                 placeholder="URL da imagem (opcional)"
+                                register={register("coverUrl")}
                             />
                             <div className="divCreateProject">
-                                <button className="buttonCreateProject">Criar projeto</button>
+                                <button type="submit" className="buttonCreateProject">Criar projeto</button>
                             </div>
                         </form>
                     </StyledModalCreate>
