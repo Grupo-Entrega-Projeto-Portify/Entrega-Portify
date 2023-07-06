@@ -18,8 +18,8 @@ export const StyledModal = styled.div`
         position: relative;
 
         width: 100%;
-        max-width: 370px;
-        height: 342px;
+        max-width: 600px;
+        height: 600px;
 
         padding: 15px;
     }

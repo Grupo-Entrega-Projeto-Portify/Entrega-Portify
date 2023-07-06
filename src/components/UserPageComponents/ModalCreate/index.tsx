@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext"
+import { StyledModalCreate } from "."
 // import React from "react"
 
 export const ModalCreate = () => {
@@ -32,41 +33,46 @@ export const ModalCreate = () => {
             <div>
                 <button onClick={() => setModalCreate(true)}><AiOutlinePlusCircle /> Adicionar projeto</button>
                 {modalCreate ? <Modal>
-                    <h1>Criar projeto</h1>
-                    <button onClick={() => setModalCreate(false)}>X</button>
-                    <form onSubmit={handleSubmit(submit)}>
-                        <Input
-                            className="main__input"
-                            type="text"
-                            placeholder="Nome"
-                            register={register("name")}
-                        />
-                        {errors.name ? <p className="text__error">{errors.name.message}</p> : null}
-                        <Input
-                            className="main__input"
-                            type="text"
-                            placeholder="Descrição resumida"
-                            register={register("description")}
-                        />       
-                        {errors.description ? <p className="text__error">{errors.description.message}</p> : null} 
-                        <Input
-                            className="main__input"
-                            type="text"
-                            placeholder="Repositório"
-                        />
-                        <Input
-                            className="main__input"
-                            type="text"
-                            placeholder="Link do deploy (opcional)"
-                        />
-                        <Input
-                            className="main__input"
-                            type="text"
-                            placeholder="URL da imagem (opcional)"
-                        />
-
-                        <button>Criar projeto</button>
-                    </form>
+                    <StyledModalCreate>
+                        <div className="headerDiv">
+                            <h1>Criar projeto</h1>
+                            <button className="buttonClose" onClick={() => setModalCreate(false)}>X</button>
+                        </div>
+                        <form onSubmit={handleSubmit(submit)}>
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Nome"
+                                register={register("name")}
+                            />
+                            {errors.name ? <p className="text__error">{errors.name.message}</p> : null}
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Descrição resumida"
+                                register={register("description")}
+                            />       
+                            {errors.description ? <p className="text__error">{errors.description.message}</p> : null} 
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Repositório"
+                            />
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Link do deploy (opcional)"
+                            />
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="URL da imagem (opcional)"
+                            />
+                            <div className="divCreateProject">
+                                <button className="buttonCreateProject">Criar projeto</button>
+                            </div>
+                        </form>
+                    </StyledModalCreate>
                 </Modal> :null}
             </div>
     )
