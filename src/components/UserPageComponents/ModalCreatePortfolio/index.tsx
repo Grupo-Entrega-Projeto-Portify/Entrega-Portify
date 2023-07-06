@@ -7,8 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
 import { StyledModalCreate } from "./index.ts"
 
-// import React from "react"
-
 export const ModalCreatePortfolio = () => {
     const { createPortfolio } = useContext(PortfolioContext)
 

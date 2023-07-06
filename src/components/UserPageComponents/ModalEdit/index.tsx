@@ -5,7 +5,6 @@ import { Input } from "../../Input"
 import { useForm } from "react-hook-form"
 import { MdOutlineModeEditOutline } from "react-icons/md"
 import { StyledModalCreate } from "./index.ts"
-// import React from "react"
 
 export const ModalEdit = () => {
     const { handleSubmit, reset} = useForm()

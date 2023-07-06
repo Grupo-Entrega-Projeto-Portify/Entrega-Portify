@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const StyledModalDelete = styled.div`
     background-color: #FFFFFF;

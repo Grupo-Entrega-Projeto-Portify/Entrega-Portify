@@ -1,13 +1,13 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect, useContext } from "react"
 import {
 	IPortfolio,
 	IPortfolioContext,
 	IPortfolioProviderProps,
 	ICreatePortfolioInput,
 	IUpdatePortfolioInput,
-} from "./types";
-import { api } from "../../services/api";
-import { UserContext } from "../UserContext/UserContext";
+} from "./types"
+import { api } from "../../services/api"
+import { UserContext } from "../UserContext/UserContext"
 
 export const PortfolioContext = createContext({} as IPortfolioContext);
 

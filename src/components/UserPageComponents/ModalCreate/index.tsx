@@ -8,7 +8,6 @@ import { TCreateModalValues, CreateModalSchema } from "./createModalSchema"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext"
 import { StyledModalCreate } from "."
-// import React from "react"
 
 export const ModalCreate = () => {
     const { register, handleSubmit, reset, formState: { errors }} = useForm<TCreateModalValues>({

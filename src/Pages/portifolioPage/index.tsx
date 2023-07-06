@@ -1,8 +1,8 @@
-import { HeaderPortfolioPage } from "../../components/PortfolioPageComponents/header/header";
-import { MainPortifolioPage } from "../../components/PortfolioPageComponents/main/main";
-import { FooterRegister } from "../../components/RegisterPageComponents/footer";
-import { useContext, useEffect } from "react";
-import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext";
+import { HeaderPortfolioPage } from "../../components/PortfolioPageComponents/header/header"
+import { MainPortifolioPage } from "../../components/PortfolioPageComponents/main/main"
+import { FooterRegister } from "../../components/RegisterPageComponents/footer"
+import { useContext, useEffect } from "react"
+import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext"
 import { useParams } from "react-router-dom"
 
 export const PortfolioPage = () => {

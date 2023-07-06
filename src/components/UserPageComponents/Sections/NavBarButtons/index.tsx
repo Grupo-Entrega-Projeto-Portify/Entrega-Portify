@@ -1,6 +1,6 @@
-import { GoHome } from "react-icons/go";
-import { FiUser } from "react-icons/fi";
-import { MdOutlineBackupTable } from "react-icons/md";
+import { GoHome } from "react-icons/go"
+import { FiUser } from "react-icons/fi"
+import { MdOutlineBackupTable } from "react-icons/md"
 
 export const SectionNavButtonsUserPage = ({ setCurrentSection }) => {
     const handleButtonClick = (section) => {

@@ -1,13 +1,13 @@
-import { createContext, useState, useEffect, useContext } from "react";
-import { api } from "../../services/api";
+import { createContext, useState, useEffect, useContext } from "react"
+import { api } from "../../services/api"
 import {
 	IProject,
 	ICreateProjectInput,
 	IUpdateProjectInput,
 	IProjectContext,
     IProjectProviderProps,
-} from "./types";
-import { UserContext } from "../UserContext/UserContext";
+} from "./types"
+import { UserContext } from "../UserContext/UserContext"
 
 export const ProjectContext = createContext({} as IProjectContext);
 

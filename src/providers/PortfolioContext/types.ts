@@ -1,4 +1,4 @@
-import { IProject } from "../ProjectContext/types";
+import { IProject } from "../ProjectContext/types"
 
 export interface IPortfolioProviderProps {
 	children: React.ReactNode;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export  const FooterHomePageCSS = styled.footer`
 background-color: var(--footer);

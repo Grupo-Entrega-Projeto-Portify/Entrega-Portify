@@ -1,12 +1,12 @@
-import { useState, useContext, useEffect } from "react";
-import { HeaderUserPage } from "../../components/UserPageComponents/Header";
-import { SectionWelcomeUserPage } from "../../components/UserPageComponents/Sections/Welcome";
-import { SectionNavButtonsUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons";
-import { SectionStartPerfilUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/StartPerfil";
-import { SectionInformationUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/InformationPerfil";
-import { SectionMyProjectsUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/MyProjects";
-import { SectionStartPerfilLinkUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/StartPerfil/StartPerfilLink";
-import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext";
+import { useState, useContext, useEffect } from "react"
+import { HeaderUserPage } from "../../components/UserPageComponents/Header"
+import { SectionWelcomeUserPage } from "../../components/UserPageComponents/Sections/Welcome"
+import { SectionNavButtonsUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons"
+import { SectionStartPerfilUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/StartPerfil"
+import { SectionInformationUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/InformationPerfil"
+import { SectionMyProjectsUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/MyProjects"
+import { SectionStartPerfilLinkUserPage } from "../../components/UserPageComponents/Sections/NavBarButtons/StartPerfil/StartPerfilLink"
+import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext"
 
 export const UserPage = () => {
     const [currentSection, setCurrentSection] = useState("start");
