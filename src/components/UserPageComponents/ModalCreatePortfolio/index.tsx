@@ -46,7 +46,7 @@ export const ModalCreatePortfolio = () => {
 
     return (
         <div>
-            <button onClick={() => setModalCreatePortfolio(true)}>Publicar portfólio</button>
+            <button className="public__button" onClick={() => setModalCreatePortfolio(true)}>Publicar portfólio</button>
             {modalCreatePortfolio ? <Modal>
                 <StyledModalCreate >
                     <div className="headerDiv">
