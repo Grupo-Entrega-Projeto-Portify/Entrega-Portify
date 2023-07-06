@@ -27,7 +27,7 @@ export interface IPortfolio {
 	userId: number;
 	position: string;
 	description: string;
-	projects: IProject;
+	projects: IProject[];
 }
 
 export interface ICreatePortfolioInput {
