@@ -78,6 +78,8 @@ export const StyledModalDelete = styled.div`
         font-weight: 700;
         font-size: 14px;
 
+        transition: 0.5s;
+
         cursor: pointer;
     }
 

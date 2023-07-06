@@ -37,6 +37,7 @@ export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
 		reset();
         setModalCreate(false);
 	};
+<<<<<<< HEAD
 	return (
 		<StyledDiv>
 			<button className="styleAddButton" onClick={() => setModalCreate(true)}>
@@ -101,3 +102,56 @@ export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
 		</StyledDiv>
 	);
 };
+=======
+    return (
+            <StyledDiv>
+                <button className="styleAddButton" onClick={() => setModalCreate(true)}><AiOutlinePlusCircle className="iconPlus"/> Adicionar projeto</button>
+                {modalCreate ? <Modal>
+                    <StyledModalCreate>
+                        <div className="headerDiv">
+                            <h1>Criar projeto</h1>
+                            <button className="buttonClose" onClick={() => setModalCreate(false)}>X</button>
+                        </div>
+                        <form onSubmit={handleSubmit(submit)}>
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Nome"
+                                register={register("name")}
+                            />
+                            {errors.name ? <p className="text__error">{errors.name.message}</p> : null}
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Descrição resumida"
+                                register={register("description")}
+                            />       
+                            {errors.description ? <p className="text__error">{errors.description.message}</p> : null} 
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Repositório"
+                                register={register("repository")}
+                            />
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="Link do deploy (opcional)"
+                                register={register("link")}
+                            />
+                            <Input
+                                className="inputModal"
+                                type="text"
+                                placeholder="URL da imagem (opcional)"
+                                register={register("coverUrl")}
+                            />
+                            <div className="divCreateProject">
+                                <button type="submit" className="buttonCreateProject">Criar projeto</button>
+                            </div>
+                        </form>
+                    </StyledModalCreate>
+                </Modal> :null}
+            </StyledDiv>
+    )
+}
+>>>>>>> feat/proteção-de-rotas
