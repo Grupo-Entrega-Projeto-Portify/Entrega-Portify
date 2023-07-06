@@ -3,7 +3,8 @@ import logo from "../../../assets/HomePage/iconLiPortify.svg"
 import { AiFillGithub } from "react-icons/ai"
 import { AiOutlinePaperClip } from "react-icons/ai"
 
-export const MainPortifolioPage = () => {
+export const MainPortifolioPage = ({userPortfolio}) => {
+  
   return (
     <>
       <MainPortifolioCSS>
@@ -12,15 +13,12 @@ export const MainPortifolioPage = () => {
             <div className="div__text">
               <div className="div__profile">
                 <p className="main__name">Batman da Silva</p>
-                <p className="main__job">Desenvolvedor Full Stack</p>
+                <p className="main__job">{userPortfolio?.position}</p>
+
               </div>
               <div className="div__lorem">
                 <p className="div__p">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer pulvinar urna ante, nec dapibus leo semper nec.
-                  Vivamus aliquet nibh nec urna accumsan, eget euismod magna
-                  fringilla. Nam condimentum, enim ut rhoncus sagittis, tellus
-                  mi sodales erat, nec ornare nunc nisi sed tortor.
+                {userPortfolio?.description}
                 </p>
               </div>
             </div>

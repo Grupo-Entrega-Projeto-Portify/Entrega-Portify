@@ -6,24 +6,28 @@ import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioCont
 import { useParams } from "react-router-dom"
 
 export const PortfolioPage = () => {
-    const portfolioContext = useContext(PortfolioContext);
-    const { fetchPortfolios, portfolios } = portfolioContext;
+    const portfolioContext = useContext(PortfolioContext)
+    const { fetchPortfolios, portfolios } = portfolioContext
     const { userID } = useParams()
-
+  
     useEffect(() => {
-        fetchPortfolios(userID);
-    }, [fetchPortfolios, userID]);
-
+      const fetchData = async () => {
+        await fetchPortfolios(userID)
+      };
+  
+      fetchData()
+    }, [fetchPortfolios, userID])
+  
     const userPortfolio = portfolios.find(
-        (portfolio) => portfolio.userId === Number(userID)
-    );
-
-    return (
-        <>
-            <h1>{userPortfolio?.position}</h1>
-            <HeaderPortfolioPage />
-            <MainPortifolioPage />
-            <FooterRegister />
-        </>
+      (portfolio) => portfolio.userId === Number(userID)
     )
-};
+  
+    return (
+      <>
+        <HeaderPortfolioPage />
+        <MainPortifolioPage userPortfolio={userPortfolio} />
+        <FooterRegister />
+      </>
+    )
+  }
+

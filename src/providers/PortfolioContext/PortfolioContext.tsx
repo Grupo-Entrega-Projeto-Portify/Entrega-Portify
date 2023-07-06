@@ -5,6 +5,7 @@ import {
 	IPortfolioProviderProps,
 	ICreatePortfolioInput,
 	IUpdatePortfolioInput,
+	IUser,
 } from "./types";
 import { api } from "../../services/api";
 import { UserContext } from "../UserContext/UserContext";
@@ -18,6 +19,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [modalCreatePortfolio, setModalCreatePortfolio] = useState(false);
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
+	const [userName, setUserName] = useState<IUser | null>(null)
 
 	const fetchPortfolios = async (userId) => {
 		try {
@@ -25,6 +27,15 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				`/portfolios?_embed=projectsprojects&userId=${userId}`
 			);
 			setPortfolios(response.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const fetchUser = async (userId) => {
+		try {
+			const response = await api.get(`/users/${userId}`);
+			setUserName(response.data)
 		} catch (error) {
 			console.log(error);
 		}
@@ -41,16 +52,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 		}
 	}, [user, fetchPortfolios]);
 
-	const RenderPortfolios = async (userId) => {
-		try {
-			const response = await api.get(
-				`/portfolios?_embed=projectsprojects&userId=${userId}`
-			);
-			setPortfolios(response.data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
 
 	const createPortfolio = async (portfolioData: ICreatePortfolioInput) => {
 		try {
@@ -105,6 +106,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				fetchPortfolios,
 				createPortfolio,
 				updatePortfolio,
+				fetchUser,
 			}}
 		>
 			{children}

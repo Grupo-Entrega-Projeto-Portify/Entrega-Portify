@@ -40,3 +40,9 @@ export interface IUpdatePortfolioInput {
 	position?: string;
 	description?: string;
 }
+
+export interface IUser {
+	email: string;
+	name: string;
+	id: number;
+}
