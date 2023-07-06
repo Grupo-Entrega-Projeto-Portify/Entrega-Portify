@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const HeaderCadastroCSS = styled.header`
   width: 100vw;

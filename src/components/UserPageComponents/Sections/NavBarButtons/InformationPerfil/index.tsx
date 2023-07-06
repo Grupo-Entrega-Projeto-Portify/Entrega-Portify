@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { FormInfoUser } from "./styled";
+import { useEffect, useState } from "react"
+import { FormInfoUser } from "./styled"
 
 export const SectionInformationUserPage = () => {
   const [userName, setUserName] = useState("");

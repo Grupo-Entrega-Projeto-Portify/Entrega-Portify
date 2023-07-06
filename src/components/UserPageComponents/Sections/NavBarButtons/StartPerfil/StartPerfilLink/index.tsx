@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 export const SectionStartPerfilLinkUserPage = () => {
     const [userID, setUserID] = useState<string | null>(null);

@@ -1,12 +1,12 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import { TLoginFormValues, loginFormSchema } from "./loginFormSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../Input";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { MainLoginCSS } from "./loginStyle";
+import { useForm, SubmitHandler } from "react-hook-form"
+import { TLoginFormValues, loginFormSchema } from "./loginFormSchema"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Input } from "../Input"
+import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { MainLoginCSS } from "./loginStyle"
 import fotoLogin from "../../assets/photoLogin.svg"
-import { UserContext } from "../../providers/UserContext/UserContext";
+import { UserContext } from "../../providers/UserContext/UserContext"
 import { ModalCreate } from "../UserPageComponents/ModalCreate/index.tsx"
 import { ModalEdit} from "../UserPageComponents/ModalEdit/index.tsx"
 import { ModalDelete} from "../UserPageComponents/ModalDelete/index.tsx"
