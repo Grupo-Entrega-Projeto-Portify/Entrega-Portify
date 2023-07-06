@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { SectionNoProjectsUserPage } from "./NoProjects"
+import { SectionAllProjectsUserPage } from "./Projects"
 
 
 export const SectionMyProjectsUserPage = () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { ModalCreatePortfolio } from "../../../ModalCreatePortfolio/index.tsx"
 
 export const SectionStartPerfilUserPage = () => {
 
@@ -7,7 +7,7 @@ export const SectionStartPerfilUserPage = () => {
         <>
             <section>
                 <h2>Seu Portfólio ainda não está publicado</h2>
-                <button>Publicar portfólio</button>
+                <ModalCreatePortfolio />
             </section>
         </>
     )

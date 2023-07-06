@@ -15,26 +15,31 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [modalCreate, setModalCreate] = useState(false);
 	const [modalEdit, setModalEdit] = useState(false);
 	const [modalDelete, setModalDelete] = useState(false);
-	const [modalCreatePortfolio, setModalCreatePortfolio] = useState(false)
+	const [modalCreatePortfolio, setModalCreatePortfolio] = useState(false);
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
 
-	useEffect(() => {
-		if (user) {
-			fetchPortfolios();
-		}
-	}, [user]);
-
-	const fetchPortfolios = async () => {
+	const fetchPortfolios = async (userId) => {
 		try {
 			const response = await api.get(
-				`/portfolios?_embed=projectsprojects&userId=${user.id}`
+				`/portfolios?_embed=projectsprojects&userId=${userId}`
 			);
 			setPortfolios(response.data);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
+	useEffect(() => {
+		if (user) {
+			const userString = localStorage.getItem("@USER");
+			if (userString) {
+				const user = JSON.parse(userString);
+				const userId = user.id;
+				fetchPortfolios(userId);
+			}
+		}
+	}, [user, fetchPortfolios]);
 
 	const createPortfolio = async (portfolioData: ICreatePortfolioInput) => {
 		try {
