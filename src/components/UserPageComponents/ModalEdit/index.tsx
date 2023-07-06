@@ -5,15 +5,18 @@ import { Input } from "../../Input";
 import { useForm } from "react-hook-form";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { StyledModalCreate } from "./index.ts";
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx";
 
 export const ModalEdit = () => {
 	const { handleSubmit, reset } = useForm();
 
 	const { modalEdit, setModalEdit } = useContext(PortfolioContext);
 
+    const { updateProject } = useContext(ProjectContext);
+
 	const submit = (dataForm) => {
 		console.log(dataForm);
-		updateProject(projectId, {
+		updateProject({
 			name: dataForm.name,
 			repository: dataForm.repository,
 			link: dataForm.link,
