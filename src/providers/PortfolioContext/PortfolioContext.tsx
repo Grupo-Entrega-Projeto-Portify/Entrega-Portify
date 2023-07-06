@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react"
+import { createContext, useState, useEffect, useContext, useCallback } from "react";
 import {
 	IPortfolio,
 	IPortfolioContext,
@@ -19,23 +19,23 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [modalCreatePortfolio, setModalCreatePortfolio] = useState(false);
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
-	const [userName, setUserName] = useState<IUser | null>(null)
+	const [userName, setUserName] = useState<IUser | null>(null);
 
-	const fetchPortfolios = async (userId) => {
+	const fetchPortfolios = useCallback(async (userId) => {
 		try {
 			const response = await api.get(
-				`/portfolios?_embed=projectsprojects&userId=${userId}`
+				`/portfolios?_embed=projects&userId=${userId}`
 			);
 			setPortfolios(response.data);
 		} catch (error) {
 			console.log(error);
 		}
-	};
+	}, []);
 
 	const fetchUser = async (userId) => {
 		try {
 			const response = await api.get(`/users/${userId}`);
-			setUserName(response.data)
+			setUserName(response.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -51,7 +51,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 			}
 		}
 	}, [user, fetchPortfolios]);
-
 
 	const createPortfolio = async (portfolioData: ICreatePortfolioInput) => {
 		try {
@@ -91,6 +90,14 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 		}
 	};
 
+	const [userPortfolioId, setUserPortfolioId] = useState<number | null>(null);
+
+	useEffect(() => {
+		if (portfolios.length > 0) {
+			setUserPortfolioId(portfolios[0].id);
+		}
+	}, [portfolios]);
+
 	return (
 		<PortfolioContext.Provider
 			value={{
@@ -107,6 +114,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				createPortfolio,
 				updatePortfolio,
 				fetchUser,
+				userPortfolioId,
 			}}
 		>
 			{children}
