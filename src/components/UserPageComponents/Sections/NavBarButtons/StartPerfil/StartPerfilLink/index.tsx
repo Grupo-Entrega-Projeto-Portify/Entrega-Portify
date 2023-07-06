@@ -19,13 +19,14 @@ export const SectionStartPerfilLinkUserPage = () => {
     <>
       <SectionStartPerfilLink>
         <div className="perfilLink__div">
-          <h2 className="perfilLink__h2">Seu Portfólio está online</h2>
-          <p className="perfilLink__p">Acesse em</p>
-          <p>
-            <a target="blank_" href={portfolioLink}>
+          <div className="perfilLink__divCenter">
+            <h2 className="perfilLink__h2">Seu Portfólio está online</h2>
+            <p className="perfilLink__p">Acesse em</p>
+
+            <a className="perfilLink__ancora" target="blank_" href={portfolioLink}>
               www.portify.com.br{portfolioLink}
             </a>
-          </p>
+          </div>
         </div>
       </SectionStartPerfilLink>
     </>
