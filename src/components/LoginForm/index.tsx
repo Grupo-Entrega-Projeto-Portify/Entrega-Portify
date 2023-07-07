@@ -7,10 +7,6 @@ import { useContext } from "react"
 import { MainLoginCSS } from "./loginStyle"
 import fotoLogin from "../../assets/photoLogin.svg"
 import { UserContext } from "../../providers/UserContext/UserContext"
-import { ModalCreate } from "../UserPageComponents/ModalCreate/index.tsx"
-import { ModalEdit} from "../UserPageComponents/ModalEdit/index.tsx"
-import { ModalDelete} from "../UserPageComponents/ModalDelete/index.tsx"
-import { ModalCreatePortfolio } from "../UserPageComponents/ModalCreatePortfolio/index.tsx"
 
 export const LoginForm = () => {
   const {
@@ -70,11 +66,6 @@ export const LoginForm = () => {
             </div>
         </div>
       </section>
-
-        <ModalCreate />
-        <ModalEdit />
-        <ModalDelete />
-        <ModalCreatePortfolio />
     </MainLoginCSS>
   );
 };
