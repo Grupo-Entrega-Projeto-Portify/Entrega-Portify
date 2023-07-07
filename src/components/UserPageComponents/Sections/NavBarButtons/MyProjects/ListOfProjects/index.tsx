@@ -9,9 +9,11 @@ import { ModalEdit } from "../../../../ModalEdit/index.tsx";
 export const UlProjects = ({ portfolioId }) => {
   const { projects, fetchProjects } = useContext(ProjectContext);
 
+  console.log(projects)
   useEffect(() => {
     fetchProjects(portfolioId);
-  }, [fetchProjects, portfolioId])
+  }, [])
+
 
   return (
     <>
@@ -29,8 +31,8 @@ export const UlProjects = ({ portfolioId }) => {
                 </div>
 
                 <div className="ul__icons">
-                  <ModalEdit />
-                  <ModalDelete />
+                  <ModalEdit projectId={project.id} />
+                  <ModalDelete projectId={project.id} />
                 </div>
               </li>
             ))}

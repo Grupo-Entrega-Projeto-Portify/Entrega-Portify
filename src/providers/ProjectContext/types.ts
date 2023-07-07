@@ -12,6 +12,7 @@ export interface IProjectContext {
 		projectData: IUpdateProjectInput
 	) => Promise<void>;
 	deleteProject: (projectId: number) => Promise<void>;
+	fetchProjects: (portfolioId: number) => Promise<void>;
 }
 
 export interface IProject {
@@ -34,7 +35,7 @@ export interface ICreateProjectInput {
 }
 
 export interface IUpdateProjectInput {
-	name?: string;
+	name: string;
 	repository?: string;
 	link?: string;
 	description: string; 

@@ -15,8 +15,8 @@ export const Modal = ({ children }: IModalProps) => {
         const handleOutclick = (event: MouseEvent) => {
             if(!modalRef.current?.contains(event.target as Node)) {
                 setModalCreate(false)
-                setModalEdit(false)
-                setModalDelete(false)
+                // setModalEdit(false)
+                // setModalDelete(false)
                 setModalCreatePortfolio(false)
             }
         }

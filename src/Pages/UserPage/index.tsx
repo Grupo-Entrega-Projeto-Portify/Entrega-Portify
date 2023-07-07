@@ -47,8 +47,6 @@ export const UserPage = () => {
         }
     };
 
-    console.log(portfolioData)
-
     return (
         <>
             <HeaderUserPage />

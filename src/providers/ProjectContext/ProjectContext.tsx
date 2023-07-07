@@ -15,11 +15,11 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 	const [projects, setProjects] = useState<IProject[]>([]);
 	const { user } = useContext(UserContext);
 
-	useEffect(() => {
-		if (user) {
-			fetchProjects();
-		}
-	}, [user]);
+	// useEffect(() => {
+	// 	if (user) {
+	// 		fetchProjects();
+	// 	}
+	// }, [user]);
 
 	const fetchProjects = async (portfolioId: number) => {
 		try {
@@ -50,17 +50,17 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 		projectData: IUpdateProjectInput
 	) => {
 		try {
+			console.log(projectData)
+			console.log(projectId)
 			const token = localStorage.getItem("@TOKEN");
-			await api.put(`/projects/${projectId}`, projectData, {
+			const {data} = await api.put(`/projects/${projectId}`, projectData, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
 			});
-			setProjects((prevProjects) =>
-				prevProjects.map((project) =>
-					project.id === projectId ? { ...project, ...projectData } : project
-				)
-			);
+			console.log(data)
+			const filteredProjects = projects.filter(project => project.id !== projectId)
+			setProjects([...filteredProjects, data])
 		} catch (error) {
 			console.log(error);
 		}
