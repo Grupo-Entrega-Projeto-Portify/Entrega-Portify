@@ -20,8 +20,8 @@ export const SectionMyProjectsUserPage = () => {
             {portfolioId && <ModalCreate portfolioId={portfolioId} />}
           </div>
         </section>
-      </MyprojectsSectionCSS>
-      <UlProjects />
+      </MyprojectsSectionCSS >
+      {portfolioId && <UlProjects portfolioId={portfolioId} />}
     </>
   )
 }

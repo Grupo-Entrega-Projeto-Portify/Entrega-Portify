@@ -21,14 +21,15 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 		}
 	}, [user]);
 
-	const fetchProjects = async () => {
+	const fetchProjects = async (portfolioId: number) => {
 		try {
-			const response = await api.get(`/portfolios/${user.id}/projects`);
-			setProjects(response.data);
+		  const response = await api.get(`/portfolios/${portfolioId}/projects`);
+		  setProjects(response.data);
 		} catch (error) {
-			console.log(error);
+		  console.log(error);
 		}
-	};
+	  };
+	  
 
 	const createProject = async (projectData: ICreateProjectInput) => {
 		try {
@@ -86,6 +87,7 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 		<ProjectContext.Provider
 			value={{
 				projects,
+				fetchProjects,
 				createProject,
 				updateProject,
 				deleteProject,
