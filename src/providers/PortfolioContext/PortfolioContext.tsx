@@ -1,4 +1,10 @@
-import { createContext, useState, useEffect, useContext, useCallback } from "react";
+import {
+	createContext,
+	useState,
+	useEffect,
+	useContext,
+	useCallback,
+} from "react";
 import {
 	IPortfolio,
 	IPortfolioContext,
@@ -20,6 +26,9 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([]);
 	const { user } = useContext(UserContext);
 	const [userName, setUserName] = useState<IUser | null>(null);
+	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | null>(
+		null
+	);
 
 	const fetchPortfolios = useCallback(async (userId) => {
 		try {
@@ -73,11 +82,14 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	) => {
 		try {
 			const token = localStorage.getItem("@TOKEN");
-			await api.put(`/portfolios/${portfolioId}`, portfolioData, {
+			await api.patch(`/portfolios/${portfolioId}`, portfolioData, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
 			});
+			const response = await api.get(`/portfolios/${portfolioId}`);
+			const updatedPortfolioData = response.data;
+			setUpdatedPortfolio(updatedPortfolioData);
 			setPortfolios((prevPortfolios) =>
 				prevPortfolios.map((portfolio) =>
 					portfolio.id === portfolioId
@@ -115,6 +127,8 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				updatePortfolio,
 				fetchUser,
 				userPortfolioId,
+				setPortfolios,
+				updatedPortfolio
 			}}
 		>
 			{children}
