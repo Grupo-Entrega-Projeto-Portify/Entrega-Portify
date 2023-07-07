@@ -124,5 +124,9 @@ export const StyledDiv = styled.div`
         font-size: 30px;
 
         cursor: pointer;
+
+        :hover {
+            color: black;
+        }
     }
 `
