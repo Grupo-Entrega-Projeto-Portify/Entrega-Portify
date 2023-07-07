@@ -29,7 +29,7 @@ export const ModalDelete = ({ projectId }) => {
 				<Modal>
 					<StyledModalDelete>
 						<div className="headerDiv">
-							<h1>Deletar projeto</h1>
+							<h1 className="titleModal">Deletar projeto</h1>
 							<button
 								className="buttonClose"
 								onClick={() => setModalDelete(false)}
@@ -37,7 +37,7 @@ export const ModalDelete = ({ projectId }) => {
 								X
 							</button>
 						</div>
-						<span>Deseja deletar o (nome do projeto)?</span>
+						<span>Deseja deletar o seu projeto?</span>
 						<div className="styleButtons">
 							<button
 								className="buttonCancel"

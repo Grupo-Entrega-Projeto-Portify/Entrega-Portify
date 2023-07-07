@@ -12,9 +12,11 @@ export const StyledModalDelete = styled.div`
     align-items: center;
     gap: 60px;
 
-    h1 {
+    .titleModal {
         font-weight: 700;
         font-size: 44px;
+
+        color: #000000;
     }
 
     .headerDiv {
@@ -52,6 +54,8 @@ export const StyledModalDelete = styled.div`
     span {
         font-size: 24px;
         font-weight: 500;
+
+        color: #000000;
     }
 
     .styleButtons {

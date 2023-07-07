@@ -10,9 +10,11 @@ export const StyledModalCreate = styled.div`
 
     padding: 15px 30px 15px 30px;
 
-    h1 {
+    .titleModal {
         font-weight: 700;
         font-size: 44px;
+
+        color: #000000;
     }
 
     .headerDiv {

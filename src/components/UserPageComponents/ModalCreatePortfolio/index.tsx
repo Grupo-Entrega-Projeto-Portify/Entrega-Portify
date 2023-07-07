@@ -48,7 +48,7 @@ export const ModalCreatePortfolio = () => {
             {modalCreatePortfolio ? <Modal>
                 <StyledModalCreate >
                     <div className="headerDiv">
-                        <h1>Publicar portfólio</h1>
+                        <h1 className="titleModal">Publicar portfólio</h1>
                         <button className="buttonClose" onClick={() => setModalCreatePortfolio(false)}>X</button>
                     </div>
                     <form onSubmit={handleSubmit(submit)}>

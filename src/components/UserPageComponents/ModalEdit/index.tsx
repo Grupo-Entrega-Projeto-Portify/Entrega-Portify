@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { Modal } from "../../Modal"
 import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
 import { Input } from "../../Input"
@@ -9,13 +9,11 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { IUpdateProjectInput } from "../../../providers/ProjectContext/types.ts"
 
 export const ModalEdit = ({ projectId }) => {
-	const { updateProject, projects } = useContext(ProjectContext)
+	const { updateProject } = useContext(ProjectContext)
 	const { modalEdit, setModalEdit } = useContext(PortfolioContext)
     const { register, handleSubmit } = useForm<IUpdateProjectInput>()
 
 	const submit:SubmitHandler<IUpdateProjectInput> = (formData) => {
-        console.log(formData)
-        console.log('atualização enviada')
 		updateProject(projectId, formData)
 	}
 
@@ -29,7 +27,7 @@ export const ModalEdit = ({ projectId }) => {
 				<Modal>
 					<StyledModalCreate>
 						<div className="headerDiv">
-							<h1>Editar projeto</h1>
+							<h1 className="titleModal">Editar projeto</h1>
 							<button
 								className="buttonClose"
 								onClick={() => setModalEdit(false)}
@@ -41,13 +39,13 @@ export const ModalEdit = ({ projectId }) => {
 							<Input
 								className="inputModal"
 								type="text"
-								placeholder="aparecer nome do projeto"
+								placeholder="Nome"
                                 register={register("name")}
 							/>
 							<Input
 								className="inputModal"
 								type="text"
-								placeholder="conteúdo já existente"
+								placeholder="Descrição"
                                 register={register("description")}
 							/>
 							<Input
