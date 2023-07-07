@@ -47,6 +47,7 @@ export const UserPage = () => {
         }
     };
 
+    console.log(portfolios)
 
     return (
         <>

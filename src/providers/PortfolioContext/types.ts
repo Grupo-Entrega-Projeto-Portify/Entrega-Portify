@@ -25,6 +25,7 @@ export interface IPortfolioContext {
 export interface IPortfolio {
 	id: number;
 	userId: number;
+	color: string;
 	position: string;
 	description: string;
 	projects: IProject[];
@@ -32,11 +33,13 @@ export interface IPortfolio {
 
 export interface ICreatePortfolioInput {
 	userId: number;
+	color: string;
 	position: string;
 	description: string;
 }
 
 export interface IUpdatePortfolioInput {
+	color?: string;
 	position?: string;
 	description?: string;
 }
