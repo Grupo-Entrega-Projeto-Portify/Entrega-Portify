@@ -42,52 +42,36 @@ export const ModalEdit = ({ projectId }) => {
 								className="inputModal"
 								type="text"
 								placeholder="aparecer nome do projeto"
-								// name="name"
-								// value={formData.name}
-								// onChange={handleInputChange}
                                 register={register("name")}
 							/>
 							<Input
 								className="inputModal"
 								type="text"
 								placeholder="conteúdo já existente"
-								// name="description"
-								// value={formData.description}
-								// onChange={handleInputChange}
                                 register={register("description")}
 							/>
 							<Input
 								className="inputModal"
 								type="text"
 								placeholder="link se tiver ou não"
-								// name="repository"
-								// value={formData.repository}
-								// onChange={handleInputChange}
                                 register={register("repository")}
 							/>
 							<Input
 								className="inputModal"
 								type="text"
 								placeholder="Link do deploy (opcional)"
-								// name="link"
-								// value={formData.link}
-								// onChange={handleInputChange}
                                 register={register("link")}
 							/>
 							<Input
 								className="inputModal"
 								type="text"
 								placeholder="URL da imagem (opcional)"
-								// name="coverUrl"
-								// value={formData.coverUrl}
-								// onChange={handleInputChange}
                                 register={register("coverUrl")}
 							/>
 
 							<div className="divCreateProject">
 								<button
 									type="submit"
-									// onClick={submit}
 									className="buttonCreateProject"
 								>
 									Editar projeto
