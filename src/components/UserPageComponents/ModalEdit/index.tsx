@@ -1,46 +1,23 @@
-import { useContext, useEffect, useState } from "react";
-import { Modal } from "../../Modal";
-import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext";
-import { Input } from "../../Input";
-import { MdOutlineModeEditOutline } from "react-icons/md";
-import { StyledDiv, StyledModalCreate } from "./index.ts";
-import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useContext, useEffect, useState } from "react"
+import { Modal } from "../../Modal"
+import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
+import { Input } from "../../Input"
+import { MdOutlineModeEditOutline } from "react-icons/md"
+import { StyledDiv, StyledModalCreate } from "./index.ts"
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx"
+import { SubmitHandler, useForm } from "react-hook-form"
 import { IUpdateProjectInput } from "../../../providers/ProjectContext/types.ts"
 
 export const ModalEdit = ({ projectId }) => {
-	const { updateProject, projects } = useContext(ProjectContext);
-	const { modalEdit, setModalEdit } = useContext(PortfolioContext);
-	// const [formData, setFormData] = useState({
-	// 	name: "",
-	// 	description: "",
-	// 	repository: "",
-	// 	link: "",
-	// 	coverUrl: "",
-	// });
-
-	// useEffect(() => {
-	// 	const project = projects.find((project) => project.id === projectId);
-	// 	if (project) {
-	// 		setFormData({ ...project });
-	// 	}
-	// }, [projects, projectId]);
-
-	// const handleInputChange = (event) => {
-	// 	const { name, value } = event.target;
-	// 	setFormData((prevFormData) => ({
-	// 		...prevFormData,
-	// 		[name]: value,
-	// 	}));
-	// };
-
+	const { updateProject, projects } = useContext(ProjectContext)
+	const { modalEdit, setModalEdit } = useContext(PortfolioContext)
     const { register, handleSubmit } = useForm<IUpdateProjectInput>()
 
 	const submit:SubmitHandler<IUpdateProjectInput> = (formData) => {
         console.log(formData)
         console.log('atualização enviada')
-		updateProject(projectId, formData);
-	};
+		updateProject(projectId, formData)
+	}
 
 	return (
 		<StyledDiv>
@@ -121,5 +98,5 @@ export const ModalEdit = ({ projectId }) => {
 				</Modal>
 			) : null}
 		</StyledDiv>
-	);
-};
+	)
+}

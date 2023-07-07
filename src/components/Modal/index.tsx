@@ -3,7 +3,7 @@ import { StyledModal } from "./modal"
 import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext"
 
 interface IModalProps {
-    children: React.ReactNode;
+    children: React.ReactNode
 }
 
 export const Modal = ({ children }: IModalProps) => {
@@ -21,10 +21,10 @@ export const Modal = ({ children }: IModalProps) => {
             }
         }
         
-        window.addEventListener("mousedown", handleOutclick);
+        window.addEventListener("mousedown", handleOutclick)
 
         return () => {
-            window.removeEventListener("mousedown", handleOutclick);
+            window.removeEventListener("mousedown", handleOutclick)
         }
     }, [])
 
@@ -38,10 +38,10 @@ export const Modal = ({ children }: IModalProps) => {
             }
         }
 
-        window.addEventListener("keydown", handleKeydown);
+        window.addEventListener("keydown", handleKeydown)
 
         return () => {
-            window.removeEventListener("keydown", handleKeydown);
+            window.removeEventListener("keydown", handleKeydown)
         }
     })
 

@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import { SectionStartPerfilLink } from "./styled";
+import { useEffect, useState } from "react"
+import { SectionStartPerfilLink } from "./styled"
 
 export const SectionStartPerfilLinkUserPage = () => {
-  const [userID, setUserID] = useState<string | null>(null);
+  const [userID, setUserID] = useState<string | null>(null)
 
   useEffect(() => {
-    const userString = localStorage.getItem("@USER");
+    const userString = localStorage.getItem("@USER")
     if (userString) {
-      const user = JSON.parse(userString);
-      const userId = user.id;
-      setUserID(userId);
+      const user = JSON.parse(userString)
+      const userId = user.id
+      setUserID(userId)
     }
-  }, []);
+  }, [])
 
-  const portfolioLink = `/portfolios/${userID}`;
+  const portfolioLink = `/portfolios/${userID}`
 
   return (
     <>
@@ -30,5 +30,5 @@ export const SectionStartPerfilLinkUserPage = () => {
         </div>
       </SectionStartPerfilLink>
     </>
-  );
-};
+  )
+}

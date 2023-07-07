@@ -1,17 +1,17 @@
-import { useContext, useEffect } from "react";
-import { StyledUl } from "./styled";
-import { BiPencil } from "react-icons/bi";
-import { BsTrash } from "react-icons/bs";
-import { ProjectContext } from "../../../../../../providers/ProjectContext/ProjectContext";
-import { ModalDelete } from "../../../../ModalDelete/index.tsx";
-import { ModalEdit } from "../../../../ModalEdit/index.tsx";
+import { useContext, useEffect } from "react"
+import { StyledUl } from "./styled"
+import { BiPencil } from "react-icons/bi"
+import { BsTrash } from "react-icons/bs"
+import { ProjectContext } from "../../../../../../providers/ProjectContext/ProjectContext"
+import { ModalDelete } from "../../../../ModalDelete/index.tsx"
+import { ModalEdit } from "../../../../ModalEdit/index.tsx"
 
 export const UlProjects = ({ portfolioId }) => {
-  const { projects, fetchProjects } = useContext(ProjectContext);
+  const { projects, fetchProjects } = useContext(ProjectContext)
 
   console.log(projects)
   useEffect(() => {
-    fetchProjects(portfolioId);
+    fetchProjects(portfolioId)
   }, [])
 
 
@@ -40,5 +40,5 @@ export const UlProjects = ({ portfolioId }) => {
         </div>
       </StyledUl>
     </>
-  );
-};
+  )
+}

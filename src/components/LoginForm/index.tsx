@@ -20,15 +20,15 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm<TLoginFormValues>({
     resolver: zodResolver(loginFormSchema),
-  });
+  })
 
-  const { userLogin } = useContext(UserContext);
+  const { userLogin } = useContext(UserContext)
 
   const submit: SubmitHandler<TLoginFormValues> = (dataForm) => {
-    userLogin(dataForm);
-    console.log(dataForm);
-    reset();
-  };
+    userLogin(dataForm)
+    console.log(dataForm)
+    reset()
+  }
 
   return (
     <MainLoginCSS>
@@ -76,5 +76,5 @@ export const LoginForm = () => {
         <ModalDelete />
         <ModalCreatePortfolio />
     </MainLoginCSS>
-  );
-};
+  )
+}

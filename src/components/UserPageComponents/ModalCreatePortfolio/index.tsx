@@ -17,13 +17,13 @@ export const ModalCreatePortfolio = () => {
 
     const { modalCreatePortfolio, setModalCreatePortfolio } = useContext(PortfolioContext)
 
-    const [userId, setUserId] = useState<number | null>(null);
+    const [userId, setUserId] = useState<number | null>(null)
 
     useEffect(() => {
-        const userString = localStorage.getItem("@USER");
+        const userString = localStorage.getItem("@USER")
         if (userString) {
-            const user = JSON.parse(userString);
-            setUserId(user.id);
+            const user = JSON.parse(userString)
+            setUserId(user.id)
         }
     }, [])
 

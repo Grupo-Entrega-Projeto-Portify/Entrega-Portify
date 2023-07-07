@@ -1,23 +1,23 @@
-import { useState, useContext } from "react";
-import { Modal } from "../../Modal";
-import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import { StyledDiv, StyledModalCreate } from "./index";
+import { useState, useContext } from "react"
+import { Modal } from "../../Modal"
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext"
+import { AiOutlinePlusCircle } from "react-icons/ai"
+import { StyledDiv, StyledModalCreate } from "./index"
 
 export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
-  const { createProject } = useContext(ProjectContext);
+  const { createProject } = useContext(ProjectContext)
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     repository: "",
     link: "",
     coverUrl: "",
-  });
+  })
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+    event.preventDefault()
 
     createProject({
       portfolioId,
@@ -26,20 +26,20 @@ export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
       link: formData.link,
       description: formData.description,
       coverUrl: formData.coverUrl,
-    });
+    })
 
-    setModalOpen(false);
-  };
+    setModalOpen(false)
+  }
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   return (
     <StyledDiv>
@@ -109,5 +109,5 @@ export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
         </Modal>
       )}
     </StyledDiv>
-  );
-};
+  )
+}

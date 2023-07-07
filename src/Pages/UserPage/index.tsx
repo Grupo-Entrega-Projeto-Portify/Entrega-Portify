@@ -9,43 +9,43 @@ import { SectionStartPerfilLinkUserPage } from "../../components/UserPageCompone
 import { PortfolioContext } from "../../providers/PortfolioContext/PortfolioContext"
 
 export const UserPage = () => {
-    const [currentSection, setCurrentSection] = useState("start");
-    const [hasPortfolio, setHasPortfolio] = useState(false);
+    const [currentSection, setCurrentSection] = useState("start")
+    const [hasPortfolio, setHasPortfolio] = useState(false)
 
-    const { fetchPortfolios, portfolios, portfolioData,  } = useContext(PortfolioContext);
+    const { fetchPortfolios, portfolios, portfolioData,  } = useContext(PortfolioContext)
 
     useEffect(() => {
-        const userString = localStorage.getItem("@USER");
+        const userString = localStorage.getItem("@USER")
         if (userString) {
-            const user = JSON.parse(userString);
-            const userId = user.id;
-            fetchPortfolios(userId);
+            const user = JSON.parse(userString)
+            const userId = user.id
+            fetchPortfolios(userId)
         }
-    }, [fetchPortfolios]);
+    }, [fetchPortfolios])
 
     useEffect(() => {
         if (portfolios.length > 0) {
-            setHasPortfolio(true);
+            setHasPortfolio(true)
         } else {
-            setHasPortfolio(false);
+            setHasPortfolio(false)
         }
-    }, [portfolios]);
+    }, [portfolios])
 
     const renderSection = () => {
         if (currentSection === "start") {
             if (hasPortfolio) {
-                return <SectionStartPerfilLinkUserPage />;
+                return <SectionStartPerfilLinkUserPage />
             } else {
-                return <SectionStartPerfilUserPage />;
+                return <SectionStartPerfilUserPage />
             }
         } else if (currentSection === "information") {
-            return <SectionInformationUserPage />;
+            return <SectionInformationUserPage />
         } else if (currentSection === "projects") {
-            return <SectionMyProjectsUserPage />;
+            return <SectionMyProjectsUserPage />
         } else {
-            return null;
+            return null
         }
-    };
+    }
 
     return (
         <>
@@ -54,5 +54,5 @@ export const UserPage = () => {
             <SectionNavButtonsUserPage setCurrentSection={setCurrentSection} />
             {renderSection()}
         </>
-    );
-};
+    )
+}

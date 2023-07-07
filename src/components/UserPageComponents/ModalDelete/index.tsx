@@ -1,23 +1,23 @@
-import { useState, useContext } from "react";
-import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext";
-import { Modal } from "../../Modal";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { StyledDiv, StyledModalDelete } from "./index.ts";
-import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx";
+import { useState, useContext } from "react"
+import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
+import { Modal } from "../../Modal"
+import { RiDeleteBin6Line } from "react-icons/ri"
+import { StyledDiv, StyledModalDelete } from "./index.ts"
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx"
 
 export const ModalDelete = ({ projectId }) => {
-	const { modalDelete, setModalDelete } = useContext(PortfolioContext);
-	const { deleteProject } = useContext(ProjectContext);
+	const { modalDelete, setModalDelete } = useContext(PortfolioContext)
+	const { deleteProject } = useContext(ProjectContext)
 
 	const handleDelete = async () => {
-		console.log('handleDelete called');
+		console.log('handleDelete called')
 		try {
-			await deleteProject(projectId);
-			setModalDelete(false);
+			await deleteProject(projectId)
+			setModalDelete(false)
 		} catch (error) {
-			console.log(error);
+			console.log(error)
 		}
-	};
+	}
 
 	return (
 		<StyledDiv>
@@ -57,5 +57,5 @@ export const ModalDelete = ({ projectId }) => {
 				</Modal>
 			) : null}
 		</StyledDiv>
-	);
-};
+	)
+}

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { ModalCreatePortfolio } from "../../../ModalCreatePortfolio/index.tsx";
-import { PublicPortifolioSection } from "./styled.ts";
+import { useEffect, useState } from "react"
+import { ModalCreatePortfolio } from "../../../ModalCreatePortfolio/index.tsx"
+import { PublicPortifolioSection } from "./styled.ts"
 
 export const SectionStartPerfilUserPage = () => {
   return (
@@ -15,5 +15,5 @@ export const SectionStartPerfilUserPage = () => {
         </section>
       </PublicPortifolioSection>
     </>
-  );
-};
+  )
+}

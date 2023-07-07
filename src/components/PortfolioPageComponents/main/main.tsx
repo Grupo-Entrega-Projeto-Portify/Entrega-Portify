@@ -1,9 +1,9 @@
-import { MainPortifolioCSS } from "./mainStyle";
-import logo from "../../../assets/HomePage/iconLiPortify.svg";
-import { AiFillGithub } from "react-icons/ai";
-import { AiOutlinePaperClip } from "react-icons/ai";
-import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext";
-import { useContext } from "react";
+import { MainPortifolioCSS } from "./mainStyle"
+import logo from "../../../assets/HomePage/iconLiPortify.svg"
+import { AiFillGithub } from "react-icons/ai"
+import { AiOutlinePaperClip } from "react-icons/ai"
+import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
+import { useContext } from "react"
 
 export const MainPortifolioPage = ({ userPortfolio }) => {
 	console.log(userPortfolio)
@@ -56,5 +56,5 @@ export const MainPortifolioPage = ({ userPortfolio }) => {
 				</section>
 			</MainPortifolioCSS>
 		</>
-	);
-};
+	)
+}

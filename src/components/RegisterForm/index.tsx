@@ -17,11 +17,11 @@ export const RegisterForm = () => {
     formState: { errors },
   } = useForm<TRegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
-  });
+  })
 
   const submit: SubmitHandler<TRegisterFormValues> = (formData) => {
-    userRegister(formData);
-  };
+    userRegister(formData)
+  }
 
   return (
     <MainRegisterCSS>

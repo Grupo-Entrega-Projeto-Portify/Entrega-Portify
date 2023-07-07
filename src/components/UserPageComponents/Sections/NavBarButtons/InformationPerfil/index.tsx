@@ -1,44 +1,44 @@
-import { useContext, useEffect, useState } from "react";
-import { FormInfoUser } from "./styled";
-import { PortfolioContext } from "../../../../../providers/PortfolioContext/PortfolioContext";
+import { useContext, useEffect, useState } from "react"
+import { FormInfoUser } from "./styled"
+import { PortfolioContext } from "../../../../../providers/PortfolioContext/PortfolioContext"
 
 export const SectionInformationUserPage = () => {
-	const [userName, setUserName] = useState("");
-	const [userEmail, setUserEmail] = useState("");
+	const [userName, setUserName] = useState("")
+	const [userEmail, setUserEmail] = useState("")
 	const { updatePortfolio, portfolios, portfolioData, setPortfolioData } =
-		useContext(PortfolioContext);
+		useContext(PortfolioContext)
 
 	useEffect(() => {
-		const storedUser = localStorage.getItem("@USER");
+		const storedUser = localStorage.getItem("@USER")
 		if (storedUser) {
-			const user = JSON.parse(storedUser);
-			setUserName(user.name);
-			setUserEmail(user.email);
+			const user = JSON.parse(storedUser)
+			setUserName(user.name)
+			setUserEmail(user.email)
 		}
-	}, []);
+	}, [])
 
 
 	const handleUpdatePortfolio = async () => {
 		try {
-			const portfolioId = portfolios.length > 0 ? portfolios[0].id : null;
+			const portfolioId = portfolios.length > 0 ? portfolios[0].id : null
 			if (portfolioId) {
-				await updatePortfolio(portfolioId, portfolioData);
+				await updatePortfolio(portfolioId, portfolioData)
 			}
 		} catch (error) {
-			console.log(error);
+			console.log(error)
 		}
-	};
+	}
 
 	const handleInputChange = (e) => {
-		const { name, value } = e.target;
+		const { name, value } = e.target
 		setPortfolioData((prevData) => ({
 			...prevData,
 			[name]: value,
-		}));
-	};
+		}))
+	}
 
 
-	console.log(portfolioData);
+	console.log(portfolioData)
 
 	return (
 		<>
@@ -98,5 +98,5 @@ export const SectionInformationUserPage = () => {
 				</section>
 			</FormInfoUser>
 		</>
-	);
-};
+	)
+}
