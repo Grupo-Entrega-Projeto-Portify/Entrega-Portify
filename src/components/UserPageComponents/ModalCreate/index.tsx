@@ -1,157 +1,113 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Modal } from "../../Modal";
-import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext";
-import { Input } from "../../Input";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { TCreateModalValues, CreateModalSchema } from "./createModalSchema";
+import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { StyledDiv, StyledModalCreate } from "./index";
-import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext";
 
 export const ModalCreate = ({ portfolioId }: { portfolioId: number }) => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors },
-	} = useForm<TCreateModalValues>({
-		resolver: zodResolver(CreateModalSchema),
-	});
+  const { createProject } = useContext(ProjectContext);
 
-	const { modalCreate, setModalCreate } = useContext(PortfolioContext);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    repository: "",
+    link: "",
+    coverUrl: "",
+  });
 
-	const { createProject } = useContext(ProjectContext);
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-	const submit: SubmitHandler<TCreateModalValues> = (dataForm) => {
-        console.log("portfolioId:", portfolioId);
-		console.log(dataForm);
-		createProject({
-			portfolioId: portfolioId,
-			name: dataForm.name,
-            description: dataForm.description,
-			repository: dataForm.repository,
-			link: dataForm.link,
-			coverUrl: dataForm.coverUrl,
-		});
-		reset();
-        setModalCreate(false);
-	};
-<<<<<<< HEAD
-	return (
-		<StyledDiv>
-			<button className="styleAddButton" onClick={() => setModalCreate(true)}>
-				<AiOutlinePlusCircle className="iconPlus" /> Adicionar projeto
-			</button>
-			{modalCreate ? (
-				<Modal>
-					<StyledModalCreate>
-						<div className="headerDiv">
-							<h1>Criar projeto</h1>
-							<button
-								className="buttonClose"
-								onClick={() => setModalCreate(false)}
-							>
-								X
-							</button>
-						</div>
-						<form onSubmit={handleSubmit(submit)}>
-							<Input
-								className="inputModal"
-								type="text"
-								placeholder="Nome"
-								register={register("name")}
-							/>
-							{errors.name ? (
-								<p className="text__error">{errors.name.message}</p>
-							) : null}
-							<Input
-								className="inputModal"
-								type="text"
-								placeholder="Descrição resumida"
-								register={register("description")}
-							/>
-							{errors.description ? (
-								<p className="text__error">{errors.description.message}</p>
-							) : null}
-							<Input
-								className="inputModal"
-								type="text"
-								placeholder="Repositório"
-								register={register("repository")}
-							/>
-							<Input
-								className="inputModal"
-								type="text"
-								placeholder="Link do deploy (opcional)"
-								register={register("link")}
-							/>
-							<Input
-								className="inputModal"
-								type="text"
-								placeholder="URL da imagem (opcional)"
-								register={register("coverUrl")}
-							/>
-							<div className="divCreateProject">
-								<button className="buttonCreateProject">Criar projeto</button>
-							</div>
-						</form>
-					</StyledModalCreate>
-				</Modal>
-			) : null}
-		</StyledDiv>
-	);
+    createProject({
+      portfolioId,
+      name: formData.name,
+      repository: formData.repository,
+      link: formData.link,
+      description: formData.description,
+      coverUrl: formData.coverUrl,
+    });
+
+    setModalOpen(false);
+  };
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  return (
+    <StyledDiv>
+      <button className="styleAddButton" onClick={() => setModalOpen(true)}>
+        <AiOutlinePlusCircle className="iconPlus" /> Adicionar projeto
+      </button>
+      {modalOpen && (
+        <Modal>
+          <StyledModalCreate>
+            <div className="headerDiv">
+              <h1>Criar projeto</h1>
+              <button
+                className="buttonClose"
+                onClick={() => setModalOpen(false)}
+              >
+                X
+              </button>
+            </div>
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="inputModal"
+                type="text"
+                placeholder="Nome"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+              />
+              <input
+                className="inputModal"
+                type="text"
+                placeholder="Descrição resumida"
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+              <input
+                className="inputModal"
+                type="text"
+                placeholder="Repositório"
+                name="repository"
+                value={formData.repository}
+                onChange={handleInputChange}
+              />
+              <input
+                className="inputModal"
+                type="text"
+                placeholder="Link do deploy (opcional)"
+                name="link"
+                value={formData.link}
+                onChange={handleInputChange}
+              />
+              <input
+                className="inputModal"
+                type="text"
+                placeholder="URL da imagem (opcional)"
+                name="coverUrl"
+                value={formData.coverUrl}
+                onChange={handleInputChange}
+              />
+              <div className="divCreateProject">
+                <button type="submit" className="buttonCreateProject">
+                  Criar projeto
+                </button>
+              </div>
+            </form>
+          </StyledModalCreate>
+        </Modal>
+      )}
+    </StyledDiv>
+  );
 };
-=======
-    return (
-            <StyledDiv>
-                <button className="styleAddButton" onClick={() => setModalCreate(true)}><AiOutlinePlusCircle className="iconPlus"/> Adicionar projeto</button>
-                {modalCreate ? <Modal>
-                    <StyledModalCreate>
-                        <div className="headerDiv">
-                            <h1>Criar projeto</h1>
-                            <button className="buttonClose" onClick={() => setModalCreate(false)}>X</button>
-                        </div>
-                        <form onSubmit={handleSubmit(submit)}>
-                            <Input
-                                className="inputModal"
-                                type="text"
-                                placeholder="Nome"
-                                register={register("name")}
-                            />
-                            {errors.name ? <p className="text__error">{errors.name.message}</p> : null}
-                            <Input
-                                className="inputModal"
-                                type="text"
-                                placeholder="Descrição resumida"
-                                register={register("description")}
-                            />       
-                            {errors.description ? <p className="text__error">{errors.description.message}</p> : null} 
-                            <Input
-                                className="inputModal"
-                                type="text"
-                                placeholder="Repositório"
-                                register={register("repository")}
-                            />
-                            <Input
-                                className="inputModal"
-                                type="text"
-                                placeholder="Link do deploy (opcional)"
-                                register={register("link")}
-                            />
-                            <Input
-                                className="inputModal"
-                                type="text"
-                                placeholder="URL da imagem (opcional)"
-                                register={register("coverUrl")}
-                            />
-                            <div className="divCreateProject">
-                                <button type="submit" className="buttonCreateProject">Criar projeto</button>
-                            </div>
-                        </form>
-                    </StyledModalCreate>
-                </Modal> :null}
-            </StyledDiv>
-    )
-}
->>>>>>> feat/proteção-de-rotas
