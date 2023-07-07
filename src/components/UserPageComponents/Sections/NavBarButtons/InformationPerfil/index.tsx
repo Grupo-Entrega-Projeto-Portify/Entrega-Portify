@@ -5,7 +5,8 @@ import { PortfolioContext } from "../../../../../providers/PortfolioContext/Port
 export const SectionInformationUserPage = () => {
 	const [userName, setUserName] = useState("");
 	const [userEmail, setUserEmail] = useState("");
-	const { updatePortfolio, portfolios } = useContext(PortfolioContext);
+	const { updatePortfolio, portfolios, updatedPortfolio, setSelectedPortfolio } =
+		useContext(PortfolioContext);
 	const [portfolioData, setPortfolioData] = useState({
 		color: "",
 		position: "",
@@ -21,38 +22,42 @@ export const SectionInformationUserPage = () => {
 		}
 	}, []);
 
-  const userPortfolio = portfolios.length > 0 ? portfolios[0] : null;
+	const userPortfolio = portfolios.length > 0 ? portfolios[0] : null;
 
-  useEffect(() => {
-    if (userPortfolio) {
-      setPortfolioData({
-        color: userPortfolio.color,
-        position: userPortfolio.position,
-        description: userPortfolio.description,
-      });
-    }
-  }, [userPortfolio]);
+	useEffect(() => {
+		if (userPortfolio) {
+			setPortfolioData({
+				color: userPortfolio.color,
+				position: userPortfolio.position,
+				description: userPortfolio.description,
+			});
+		}
+	}, [userPortfolio]);
 
-  const handleUpdatePortfolio = async () => {
-    try {
-      const portfolioId = portfolios.length > 0 ? portfolios[0].id : null;
-      if (portfolioId) {
-        const updatedPortfolioData = {
-          color: portfolioData.color,
-          position: portfolioData.position,
-          description: portfolioData.description,
-        };
-        await updatePortfolio(portfolioId, updatedPortfolioData);
-        console.log(updatedPortfolioData)
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+	useEffect(() => {
+		if (updatedPortfolio) {
+			setSelectedPortfolio(updatedPortfolio);
+		}
+	}, [updatedPortfolio]);
 
-  
-  console.log(portfolioData)
+	const handleUpdatePortfolio = async () => {
+		try {
+			const portfolioId = portfolios.length > 0 ? portfolios[0].id : null;
+			if (portfolioId) {
+				const updatedPortfolioData = {
+					color: portfolioData.color,
+					position: portfolioData.position,
+					description: portfolioData.description,
+				};
+				await updatePortfolio(portfolioId, updatedPortfolioData);
+				console.log(updatedPortfolioData);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
+	console.log(portfolioData);
 
 	return (
 		<>

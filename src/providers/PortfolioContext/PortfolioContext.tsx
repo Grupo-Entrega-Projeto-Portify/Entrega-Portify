@@ -29,6 +29,8 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | null>(
 		null
 	);
+	const [selectedPortfolio, setSelectedPortfolio] = useState<IPortfolio | null>(null);
+
 
 	const fetchPortfolios = useCallback(async (userId) => {
 		try {
@@ -128,7 +130,8 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				fetchUser,
 				userPortfolioId,
 				setPortfolios,
-				updatedPortfolio
+				updatedPortfolio,
+				selectedPortfolio
 			}}
 		>
 			{children}
