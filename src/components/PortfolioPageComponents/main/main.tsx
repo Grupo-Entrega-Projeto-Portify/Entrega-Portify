@@ -6,10 +6,7 @@ import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioC
 import { useContext } from "react";
 
 export const MainPortifolioPage = ({ userPortfolio }) => {
-	
-	const { selectedPortfolio } = useContext(PortfolioContext);
-	console.log(selectedPortfolio)
-	
+	console.log(userPortfolio)
 	return (
 		<>
 			<MainPortifolioCSS>

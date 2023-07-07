@@ -5,13 +5,8 @@ import { PortfolioContext } from "../../../../../providers/PortfolioContext/Port
 export const SectionInformationUserPage = () => {
 	const [userName, setUserName] = useState("");
 	const [userEmail, setUserEmail] = useState("");
-	const { updatePortfolio, portfolios, updatedPortfolio, setSelectedPortfolio } =
+	const { updatePortfolio, portfolios, portfolioData, setPortfolioData } =
 		useContext(PortfolioContext);
-	const [portfolioData, setPortfolioData] = useState({
-		color: "",
-		position: "",
-		description: "",
-	});
 
 	useEffect(() => {
 		const storedUser = localStorage.getItem("@USER");
@@ -22,40 +17,26 @@ export const SectionInformationUserPage = () => {
 		}
 	}, []);
 
-	const userPortfolio = portfolios.length > 0 ? portfolios[0] : null;
-
-	useEffect(() => {
-		if (userPortfolio) {
-			setPortfolioData({
-				color: userPortfolio.color,
-				position: userPortfolio.position,
-				description: userPortfolio.description,
-			});
-		}
-	}, [userPortfolio]);
-
-	useEffect(() => {
-		if (updatedPortfolio) {
-			setSelectedPortfolio(updatedPortfolio);
-		}
-	}, [updatedPortfolio]);
 
 	const handleUpdatePortfolio = async () => {
 		try {
 			const portfolioId = portfolios.length > 0 ? portfolios[0].id : null;
 			if (portfolioId) {
-				const updatedPortfolioData = {
-					color: portfolioData.color,
-					position: portfolioData.position,
-					description: portfolioData.description,
-				};
-				await updatePortfolio(portfolioId, updatedPortfolioData);
-				console.log(updatedPortfolioData);
+				await updatePortfolio(portfolioId, portfolioData);
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setPortfolioData((prevData) => ({
+			...prevData,
+			[name]: value,
+		}));
+	};
+
 
 	console.log(portfolioData);
 
@@ -78,13 +59,9 @@ export const SectionInformationUserPage = () => {
 						<label className="info__label">Modo de Cor</label>
 						<select
 							className="info__input"
+							name="color"
 							value={portfolioData.color}
-							onChange={(e) =>
-								setPortfolioData((prevData) => ({
-									...prevData,
-									color: e.target.value,
-								}))
-							}
+							onChange={handleInputChange}
 						>
 							<option value="Claro">Claro</option>
 							<option value="Escuro">Escuro</option>
@@ -97,13 +74,9 @@ export const SectionInformationUserPage = () => {
 							type="text"
 							placeholder="Cargo"
 							className="info__input"
+							name="position"
 							value={portfolioData.position}
-							onChange={(e) =>
-								setPortfolioData((prevData) => ({
-									...prevData,
-									position: e.target.value,
-								}))
-							}
+							onChange={handleInputChange}
 						/>
 					</fieldset>
 
@@ -112,17 +85,13 @@ export const SectionInformationUserPage = () => {
 						<textarea
 							placeholder="Descrição"
 							className="info__textarea"
+							name="description"
 							value={portfolioData.description}
-							onChange={(e) =>
-								setPortfolioData((prevData) => ({
-									...prevData,
-									description: e.target.value,
-								}))
-							}
+							onChange={handleInputChange}
 						/>
 					</fieldset>
 					<div className="info__buttonDiv">
-						<button className="info__button" onClick={handleUpdatePortfolio}>
+						<button type="button" className="info__button" onClick={handleUpdatePortfolio}>
 							Atualizar portfólio
 						</button>
 					</div>

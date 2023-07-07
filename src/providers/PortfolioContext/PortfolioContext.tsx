@@ -29,8 +29,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | null>(
 		null
 	);
-	const [selectedPortfolio, setSelectedPortfolio] = useState<IPortfolio | null>(null);
-
+	const [portfolioData, setPortfolioData] = useState<IPortfolio | null>(null);
 
 	const fetchPortfolios = useCallback(async (userId) => {
 		try {
@@ -38,6 +37,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				`/portfolios?_embed=projects&userId=${userId}`
 			);
 			setPortfolios(response.data);
+			setPortfolioData(response.data[0]);
 		} catch (error) {
 			console.log(error);
 		}
@@ -84,21 +84,13 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	) => {
 		try {
 			const token = localStorage.getItem("@TOKEN");
+			console.log("requisição",portfolioData)
 			await api.patch(`/portfolios/${portfolioId}`, portfolioData, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
 			});
-			const response = await api.get(`/portfolios/${portfolioId}`);
-			const updatedPortfolioData = response.data;
-			setUpdatedPortfolio(updatedPortfolioData);
-			setPortfolios((prevPortfolios) =>
-				prevPortfolios.map((portfolio) =>
-					portfolio.id === portfolioId
-						? { ...portfolio, ...portfolioData }
-						: portfolio
-				)
-			);
+			setPortfolioData(portfolioData);
 		} catch (error) {
 			console.log(error);
 		}
@@ -131,7 +123,8 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				userPortfolioId,
 				setPortfolios,
 				updatedPortfolio,
-				selectedPortfolio
+				portfolioData,
+				setPortfolioData,
 			}}
 		>
 			{children}

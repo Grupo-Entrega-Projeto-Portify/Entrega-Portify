@@ -12,7 +12,7 @@ export const UserPage = () => {
     const [currentSection, setCurrentSection] = useState("start");
     const [hasPortfolio, setHasPortfolio] = useState(false);
 
-    const { fetchPortfolios, portfolios } = useContext(PortfolioContext);
+    const { fetchPortfolios, portfolios, portfolioData,  } = useContext(PortfolioContext);
 
     useEffect(() => {
         const userString = localStorage.getItem("@USER");
@@ -47,7 +47,7 @@ export const UserPage = () => {
         }
     };
 
-    console.log(portfolios)
+    console.log(portfolioData)
 
     return (
         <>

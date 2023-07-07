@@ -1,13 +1,13 @@
-import { createContext, useState, useEffect, useContext } from "react"
-import { api } from "../../services/api"
+import { createContext, useState, useEffect, useContext } from "react";
+import { api } from "../../services/api";
 import {
 	IProject,
 	ICreateProjectInput,
 	IUpdateProjectInput,
 	IProjectContext,
-    IProjectProviderProps,
-} from "./types"
-import { UserContext } from "../UserContext/UserContext"
+	IProjectProviderProps,
+} from "./types";
+import { UserContext } from "../UserContext/UserContext";
 
 export const ProjectContext = createContext({} as IProjectContext);
 
@@ -23,13 +23,12 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 
 	const fetchProjects = async (portfolioId: number) => {
 		try {
-		  const response = await api.get(`/portfolios/${portfolioId}/projects`);
-		  setProjects(response.data);
+			const response = await api.get(`/portfolios/${portfolioId}/projects`);
+			setProjects(response.data);
 		} catch (error) {
-		  console.log(error);
+			console.log(error);
 		}
-	  };
-	  
+	};
 
 	const createProject = async (projectData: ICreateProjectInput) => {
 		try {
