@@ -6,10 +6,14 @@ import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioC
 import { useContext } from "react"
 
 export const MainPortifolioPage = ({ userPortfolio }) => {
-	console.log(userPortfolio)
+
+	const { portfolioData } = useContext(PortfolioContext)
+	const portifolioColor = portfolioData?.color
+
+
 	return (
 		<>
-			<MainPortifolioCSS>
+			<MainPortifolioCSS portifolioColor={portifolioColor}>
 				<section className="main__section">
 					<div className="main__div">
 						<div className="div__text">

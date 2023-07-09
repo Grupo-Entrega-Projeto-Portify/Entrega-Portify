@@ -20,7 +20,7 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 			const response = await api.get(`/portfolios/${portfolioId}/projects`)
 			setProjects(response.data)
 		} catch (error) {
-			console.log(error)
+
 		}
 	}
 
@@ -35,7 +35,7 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 			const createdProject = response.data
 			setProjects((prevProjects) => [...prevProjects, createdProject])
 		} catch (error) {
-			console.log(error)
+
 		}
 	}
 
@@ -44,19 +44,15 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 		projectData: IUpdateProjectInput
 	) => {
 		try {
-			console.log(projectData)
-			console.log(projectId)
 			const token = localStorage.getItem("@TOKEN")
 			const {data} = await api.put(`/projects/${projectId}`, projectData, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
 			})
-			console.log(data)
 			const filteredProjects = projects.filter(project => project.id !== projectId)
 			setProjects([...filteredProjects, data])
 		} catch (error) {
-			console.log(error)
 		}
 	}
 
@@ -72,7 +68,6 @@ export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 				prevProjects.filter((project) => project.id !== projectId)
 			)
 		} catch (error) {
-			console.log(error)
 		}
 	}
 

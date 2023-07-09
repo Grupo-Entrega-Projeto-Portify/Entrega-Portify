@@ -8,8 +8,6 @@ import { ModalEdit } from "../../../../ModalEdit/index.tsx"
 
 export const UlProjects = ({ portfolioId }) => {
   const { projects, fetchProjects } = useContext(ProjectContext)
-
-  console.log(projects)
   useEffect(() => {
     fetchProjects(portfolioId)
   }, [])

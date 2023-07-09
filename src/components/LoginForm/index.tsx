@@ -22,7 +22,6 @@ export const LoginForm = () => {
 
   const submit: SubmitHandler<TLoginFormValues> = (dataForm) => {
     userLogin(dataForm)
-    console.log(dataForm)
     reset()
   }
 

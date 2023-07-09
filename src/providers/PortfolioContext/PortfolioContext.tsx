@@ -39,7 +39,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 			setPortfolios(response.data)
 			setPortfolioData(response.data[0])
 		} catch (error) {
-			console.log(error)
 		}
 	}, [])
 
@@ -48,7 +47,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 			const response = await api.get(`/users/${userId}`)
 			setUserName(response.data)
 		} catch (error) {
-			console.log(error)
 		}
 	}
 
@@ -74,7 +72,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 			const createdPortfolio = response.data
 			setPortfolios((prevPortfolios) => [...prevPortfolios, createdPortfolio])
 		} catch (error) {
-			console.log(error)
 		}
 	}
 
@@ -84,7 +81,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	) => {
 		try {
 			const token = localStorage.getItem("@TOKEN")
-			console.log("requisição",portfolioData)
 			await api.patch(`/portfolios/${portfolioId}`, portfolioData, {
 				headers: {
 					Authorization: `Bearer ${token}`,
@@ -92,7 +88,6 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 			})
 			setPortfolioData(portfolioData)
 		} catch (error) {
-			console.log(error)
 		}
 	}
 

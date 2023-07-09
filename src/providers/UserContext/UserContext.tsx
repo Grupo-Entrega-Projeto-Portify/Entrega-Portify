@@ -19,13 +19,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 	const userRegister = async (formData: TRegisterFormValues) => {
 		try {
 			const { data } = await api.post("/users", formData)
-			console.log(data)
-			console.log("Cadastro efetuado com sucesso!")
 			toast.success("Cadastro efetuado com sucesso!")
             navigate("/loginpage")
 		} catch (error) {
             toast.error("Ops! Algo deu errado")
-			console.log(error)
 		}
 	}
 
@@ -39,7 +36,6 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
             navigate("/userPage")
 		} catch (error) {
             toast.error("Ops! Algo deu errado")
-			console.log(error)
 		}
 	}
 	

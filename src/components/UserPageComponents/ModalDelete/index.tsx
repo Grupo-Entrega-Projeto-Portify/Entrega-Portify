@@ -10,12 +10,10 @@ export const ModalDelete = ({ projectId }) => {
 	const { deleteProject } = useContext(ProjectContext)
 
 	const handleDelete = async () => {
-		console.log('handleDelete called')
 		try {
 			await deleteProject(projectId)
 			setModalDelete(false)
 		} catch (error) {
-			console.log(error)
 		}
 	}
 

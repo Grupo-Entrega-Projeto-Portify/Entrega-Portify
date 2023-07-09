@@ -25,7 +25,6 @@ export const SectionInformationUserPage = () => {
 				await updatePortfolio(portfolioId, portfolioData)
 			}
 		} catch (error) {
-			console.log(error)
 		}
 	}
 
@@ -36,9 +35,6 @@ export const SectionInformationUserPage = () => {
 			[name]: value,
 		}))
 	}
-
-
-	console.log(portfolioData)
 
 	return (
 		<>

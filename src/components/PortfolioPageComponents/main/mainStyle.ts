@@ -1,17 +1,23 @@
 import styled from "styled-components"
 
-export const MainPortifolioCSS = styled.main`
+interface IMainPortifolioCSS {
+  portifolioColor: string;
+}
+
+export const MainPortifolioCSS = styled.main<IMainPortifolioCSS>`
   width: 100vw;
   min-height: 100vh;
+  background-color: ${(props) => props.portifolioColor === "Escuro" ? "#0F1411" : "#ffffff"};
 
   .main__section {
     max-width: 1728px;
     width: 85%;
 
-    margin: 100px auto;
+    margin:  auto;
   }
 
   .main__div {
+    padding-top: 100px;
   }
 
   .div__text {
@@ -31,6 +37,7 @@ export const MainPortifolioCSS = styled.main`
   .main__name {
     font-size: var(--title);
     font-weight: var(--700);
+    color: ${(props) => props.portifolioColor === "Escuro" ? "#ffffff" : "#0F1411"};
   }
 
   .main__job {
@@ -43,7 +50,7 @@ export const MainPortifolioCSS = styled.main`
   }
 
   .div__p {
-    color: var(--grey-1);
+    color: ${(props) => props.portifolioColor === "Escuro" ? "#ffffff" : "#0F1411"};
     font-weight: var(--400);
   }
 
@@ -54,7 +61,7 @@ export const MainPortifolioCSS = styled.main`
   .projects__title {
     font-size: var(--title);
     font-weight: var(--700);
-
+    color: ${(props) => props.portifolioColor === "Escuro" ? "#ffffff" : "#0F1411"};
     margin-bottom: 100px;
   }
 
@@ -98,11 +105,13 @@ export const MainPortifolioCSS = styled.main`
 }
 
 .projects__myproject{
+  color: ${(props) => props.portifolioColor === "Escuro" ? "#ffffff" : "#0F1411"};
     font-size: 28px;
     font-weight: var(--700);
 }
 
 .projects__lorem{
+  color: ${(props) => props.portifolioColor === "Escuro" ? "#ffffff" : "#0F1411"};
 font-size: var(--title-1);
 font-weight: var(--400);
 
