@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { ModalCreatePortfolio } from "../../../ModalCreatePortfolio/index.tsx"
 import { PublicPortifolioSection } from "./styled.ts"
 

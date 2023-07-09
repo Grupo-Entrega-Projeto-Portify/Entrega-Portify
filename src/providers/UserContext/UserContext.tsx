@@ -18,7 +18,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
 	const userRegister = async (formData: TRegisterFormValues) => {
 		try {
-			const { data } = await api.post("/users", formData)
+			await api.post("/users", formData)
 			toast.success("Cadastro efetuado com sucesso!")
             navigate("/loginpage")
 		} catch (error) {

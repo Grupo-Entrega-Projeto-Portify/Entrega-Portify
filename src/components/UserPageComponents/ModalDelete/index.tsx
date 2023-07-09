@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useContext } from "react"
 import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
 import { Modal } from "../../Modal"
 import { RiDeleteBin6Line } from "react-icons/ri"

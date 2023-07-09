@@ -1,7 +1,5 @@
 import { useContext, useEffect } from "react"
 import { StyledUl } from "./styled"
-import { BiPencil } from "react-icons/bi"
-import { BsTrash } from "react-icons/bs"
 import { ProjectContext } from "../../../../../../providers/ProjectContext/ProjectContext"
 import { ModalDelete } from "../../../../ModalDelete/index.tsx"
 import { ModalEdit } from "../../../../ModalEdit/index.tsx"

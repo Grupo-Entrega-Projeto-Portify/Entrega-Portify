@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react"
+import { createContext, useState } from "react"
 import { api } from "../../services/api"
 import {
 	IProject,
@@ -7,13 +7,11 @@ import {
 	IProjectContext,
 	IProjectProviderProps,
 } from "./types"
-import { UserContext } from "../UserContext/UserContext"
 
 export const ProjectContext = createContext({} as IProjectContext)
 
 export const ProjectProvider = ({ children }: IProjectProviderProps) => {
 	const [projects, setProjects] = useState<IProject[]>([])
-	const { user } = useContext(UserContext)
 
 	const fetchProjects = async (portfolioId: number) => {
 		try {

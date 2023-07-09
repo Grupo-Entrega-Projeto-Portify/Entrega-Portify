@@ -1,7 +1,5 @@
 import { useContext } from "react"
 import { PortfolioContext } from "../../../../../providers/PortfolioContext/PortfolioContext.tsx"
-import { SectionNoProjectsUserPage } from "./NoProjects"
-import { SectionAllProjectsUserPage } from "./Projects"
 import { ModalCreate } from "../../../ModalCreate/index.tsx"
 import { MyprojectsSectionCSS } from "./styled.ts"
 import { UlProjects } from "./ListOfProjects/index.tsx"

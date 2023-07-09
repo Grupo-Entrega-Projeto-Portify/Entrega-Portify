@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react"
+// export const SectionAllProjectsUserPage = () => {
 
-
-export const SectionAllProjectsUserPage = () => {
-
-    return (
-        <>
-            <section>
-                <p>test</p>
-            </section>
-        </>
-    )
-}
+//     return (
+//         <>
+//             <section>
+//                 <p>test</p>
+//             </section>
+//         </>
+//     )
+// }

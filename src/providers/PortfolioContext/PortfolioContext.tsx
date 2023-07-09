@@ -31,7 +31,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	)
 	const [portfolioData, setPortfolioData] = useState<IPortfolio | null>(null)
 
-	const fetchPortfolios = useCallback(async (userId) => {
+	const fetchPortfolios = useCallback(async (userId:number) => {
 		try {
 			const response = await api.get(
 				`/portfolios?_embed=projects&userId=${userId}`
@@ -42,7 +42,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 		}
 	}, [])
 
-	const fetchUser = async (userId) => {
+	const fetchUser = async (userId:number) => {
 		try {
 			const response = await api.get(`/users/${userId}`)
 			setUserName(response.data)
@@ -120,6 +120,8 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 				updatedPortfolio,
 				portfolioData,
 				setPortfolioData,
+				userName,
+				setUpdatedPortfolio
 			}}
 		>
 			{children}
