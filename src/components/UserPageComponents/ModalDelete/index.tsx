@@ -5,7 +5,11 @@ import { RiDeleteBin6Line } from "react-icons/ri"
 import { StyledDiv, StyledModalDelete } from "./index.ts"
 import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext.tsx"
 
-export const ModalDelete = ({ projectId }) => {
+interface IProps {
+	projectId: number
+}
+
+export const ModalDelete = ({ projectId }:IProps) => {
 	const { modalDelete, setModalDelete } = useContext(PortfolioContext)
 	const { deleteProject } = useContext(ProjectContext)
 

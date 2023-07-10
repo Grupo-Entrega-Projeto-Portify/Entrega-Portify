@@ -21,7 +21,7 @@ export const UserPage = () => {
             const userId = user.id
             fetchPortfolios(userId)
         }
-    }, [fetchPortfolios])
+    }, [])
 
     useEffect(() => {
         if (portfolios.length > 0) {

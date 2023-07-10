@@ -9,14 +9,10 @@ export const PortfolioPage = () => {
     const portfolioContext = useContext(PortfolioContext)
     const { fetchPortfolios, portfolios } = portfolioContext
     const { userID } = useParams()
-  
+
     useEffect(() => {
-      const fetchData = async () => {
-        await fetchPortfolios(userID)
-      };
-  
-      fetchData()
-    }, [fetchPortfolios, userID])
+      fetchPortfolios(Number(userID))
+    }, [])
   
     const userPortfolio = portfolios.find(
       (portfolio) => portfolio.userId === Number(userID)
@@ -25,7 +21,7 @@ export const PortfolioPage = () => {
     return (
       <>
         <HeaderPortfolioPage />
-        <MainPortifolioPage userPortfolio={userPortfolio} />
+        { userPortfolio ? <MainPortifolioPage userPortfolio={userPortfolio} /> : null }
         <FooterRegister />
       </>
     )

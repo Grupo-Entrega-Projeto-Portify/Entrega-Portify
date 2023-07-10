@@ -17,7 +17,7 @@ export const ModalCreatePortfolio = () => {
 
     const { modalCreatePortfolio, setModalCreatePortfolio } = useContext(PortfolioContext)
 
-    const [userId, setUserId] = useState<number | null>(null)
+    const [userId, setUserId] = useState<number>(0)
 
     useEffect(() => {
         const userString = localStorage.getItem("@USER")

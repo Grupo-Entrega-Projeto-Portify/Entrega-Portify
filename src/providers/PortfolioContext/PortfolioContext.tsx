@@ -3,7 +3,6 @@ import {
 	useState,
 	useEffect,
 	useContext,
-	useCallback,
 } from "react"
 import {
 	IPortfolio,
@@ -29,18 +28,15 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | null>(
 		null
 	)
-	const [portfolioData, setPortfolioData] = useState<IPortfolio | null>(null)
+	const [portfolioData, setPortfolioData] = useState<IPortfolio | IUpdatePortfolioInput | null>(null)
 
-	const fetchPortfolios = useCallback(async (userId:number) => {
-		try {
-			const response = await api.get(
-				`/portfolios?_embed=projects&userId=${userId}`
-			)
-			setPortfolios(response.data)
-			setPortfolioData(response.data[0])
-		} catch (error) {
+	const fetchPortfolios = async (userId: number) => {
+		if (userId) {
+		  const { data } = await api.get(`/portfolios?_embed=projects&userId=${userId}`);
+		  setPortfolios(data)
+		  setPortfolioData(data[0])
 		}
-	}, [])
+	  };
 
 	const fetchUser = async (userId:number) => {
 		try {

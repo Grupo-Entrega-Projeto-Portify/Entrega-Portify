@@ -8,7 +8,11 @@ import { ProjectContext } from "../../../providers/ProjectContext/ProjectContext
 import { SubmitHandler, useForm } from "react-hook-form"
 import { IUpdateProjectInput } from "../../../providers/ProjectContext/types.ts"
 
-export const ModalEdit = ({ projectId }) => {
+interface IProps {
+	projectId: number
+}
+
+export const ModalEdit = ({ projectId }:IProps) => {
 	const { updateProject } = useContext(ProjectContext)
 	const { modalEdit, setModalEdit } = useContext(PortfolioContext)
     const { register, handleSubmit } = useForm<IUpdateProjectInput>()

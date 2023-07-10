@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 interface IMainPortifolioCSS {
-  portifolioColor: string;
+  portifolioColor: string | undefined;
 }
 
 export const MainPortifolioCSS = styled.main<IMainPortifolioCSS>`

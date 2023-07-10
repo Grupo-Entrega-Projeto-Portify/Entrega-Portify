@@ -3,10 +3,17 @@ import { AiFillGithub } from "react-icons/ai"
 import { AiOutlinePaperClip } from "react-icons/ai"
 import { PortfolioContext } from "../../../providers/PortfolioContext/PortfolioContext"
 import { useContext } from "react"
+import { IPortfolio } from "../../../providers/PortfolioContext/types"
 
-export const MainPortifolioPage = ({ userPortfolio }) => {
+interface IProps {
+	userPortfolio: IPortfolio
+}
 
+export const MainPortifolioPage = ({ userPortfolio }:IProps) => {
+	console.log(userPortfolio)
 	const { portfolioData } = useContext(PortfolioContext)
+	console.log(portfolioData)
+
 	const portifolioColor = portfolioData?.color
 
 

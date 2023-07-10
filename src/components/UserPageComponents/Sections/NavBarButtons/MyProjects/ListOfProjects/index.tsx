@@ -4,7 +4,11 @@ import { ProjectContext } from "../../../../../../providers/ProjectContext/Proje
 import { ModalDelete } from "../../../../ModalDelete/index.tsx"
 import { ModalEdit } from "../../../../ModalEdit/index.tsx"
 
-export const UlProjects = ({ portfolioId }) => {
+interface IProps {
+  portfolioId: number;
+}
+
+export const UlProjects = ({ portfolioId }:IProps) => {
   const { projects, fetchProjects } = useContext(ProjectContext)
   useEffect(() => {
     fetchProjects(portfolioId)

@@ -14,12 +14,20 @@ export interface IPortfolioContext {
 	modalCreatePortfolio: boolean;
 	setModalCreatePortfolio: React.Dispatch<React.SetStateAction<boolean>>;
 	portfolios: IPortfolio[];
-	fetchPortfolios: () => Promise<void>;
+	fetchPortfolios: (userId: number) => Promise<void>;
 	createPortfolio: (portfolioData: ICreatePortfolioInput) => Promise<void>;
 	updatePortfolio: (
 		portfolioId: number,
 		portfolioData: IUpdatePortfolioInput
 	) => Promise<void>;
+	fetchUser: (userId: number) => Promise<void>;
+	userPortfolioId: number | null;
+	setPortfolios: React.Dispatch<React.SetStateAction<IPortfolio[]>>;
+	updatedPortfolio: IPortfolio | null;
+	portfolioData: IPortfolio | IUpdatePortfolioInput | null;
+	setPortfolioData: React.Dispatch<React.SetStateAction<IPortfolio | IUpdatePortfolioInput | null>>;
+	userName: IUser | null;
+	setUpdatedPortfolio: React.Dispatch<React.SetStateAction<IPortfolio | null>>;
 }
 
 export interface IPortfolio {
