@@ -18,16 +18,16 @@ export interface IPortfolioContext {
 	createPortfolio: (portfolioData: ICreatePortfolioInput) => Promise<void>;
 	updatePortfolio: (
 		portfolioId: number,
-		portfolioData: IUpdatePortfolioInput
+		portfolioData: IUpdatePortfolioInput | null
 	) => Promise<void>;
 	fetchUser: (userId: number) => Promise<void>;
 	userPortfolioId: number | null;
 	setPortfolios: React.Dispatch<React.SetStateAction<IPortfolio[]>>;
-	updatedPortfolio: IPortfolio | null;
+	updatedPortfolio: IPortfolio | IUpdatePortfolioInput | null;
 	portfolioData: IPortfolio | IUpdatePortfolioInput | null;
 	setPortfolioData: React.Dispatch<React.SetStateAction<IPortfolio | IUpdatePortfolioInput | null>>;
 	userName: IUser | null;
-	setUpdatedPortfolio: React.Dispatch<React.SetStateAction<IPortfolio | null>>;
+	setUpdatedPortfolio: React.Dispatch<React.SetStateAction<IPortfolio | IUpdatePortfolioInput | null>>;
 }
 
 export interface IPortfolio {

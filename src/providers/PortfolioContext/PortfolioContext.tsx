@@ -25,7 +25,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 	const [portfolios, setPortfolios] = useState<IPortfolio[]>([])
 	const { user } = useContext(UserContext)
 	const [userName, setUserName] = useState<IUser | null>(null)
-	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | null>(
+	const [updatedPortfolio, setUpdatedPortfolio] = useState<IPortfolio | IUpdatePortfolioInput | null>(
 		null
 	)
 	const [portfolioData, setPortfolioData] = useState<IPortfolio | IUpdatePortfolioInput | null>(null)
@@ -73,7 +73,7 @@ export const PortifolioProvider = ({ children }: IPortfolioProviderProps) => {
 
 	const updatePortfolio = async (
 		portfolioId: number,
-		portfolioData: IUpdatePortfolioInput
+		portfolioData: IUpdatePortfolioInput | IPortfolio | null
 	) => {
 		try {
 			const token = localStorage.getItem("@TOKEN")

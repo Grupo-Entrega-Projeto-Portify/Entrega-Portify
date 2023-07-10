@@ -3,8 +3,12 @@ import { FiUser } from "react-icons/fi"
 import { MdOutlineBackupTable } from "react-icons/md"
 import { StyleNavBar } from "./styled"
 
-export const SectionNavButtonsUserPage = ({ setCurrentSection }) => {
-    const handleButtonClick = (section) => {
+interface IProps {
+    setCurrentSection: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const SectionNavButtonsUserPage = ({ setCurrentSection }:IProps) => {
+    const handleButtonClick = (section:string) => {
         setCurrentSection(section)
     }
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { ChangeEvent, useContext, useEffect, useState } from "react"
 import { FormInfoUser } from "./styled"
 import { PortfolioContext } from "../../../../../providers/PortfolioContext/PortfolioContext"
 
@@ -28,7 +28,7 @@ export const SectionInformationUserPage = () => {
 		}
 	}
 
-	const handleInputChange = (e) => {
+	const handleInputChange = (e:ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target
 		setPortfolioData((prevData) => ({
 			...prevData,
@@ -56,7 +56,7 @@ export const SectionInformationUserPage = () => {
 						<select
 							className="info__input"
 							name="color"
-							value={portfolioData.color}
+							value={portfolioData?.color}
 							onChange={handleInputChange}
 						>
 							<option value="Claro">Claro</option>
@@ -71,7 +71,7 @@ export const SectionInformationUserPage = () => {
 							placeholder="Cargo"
 							className="info__input"
 							name="position"
-							value={portfolioData.position}
+							value={portfolioData?.position}
 							onChange={handleInputChange}
 						/>
 					</fieldset>
@@ -82,7 +82,7 @@ export const SectionInformationUserPage = () => {
 							placeholder="Descrição"
 							className="info__textarea"
 							name="description"
-							value={portfolioData.description}
+							value={portfolioData?.description}
 							onChange={handleInputChange}
 						/>
 					</fieldset>
